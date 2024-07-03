@@ -18,7 +18,7 @@ type ParticlesProps = {
 	particleColor?: string;
 	particleDensity?: number;
 };
-export const Sparkles = (props: ParticlesProps) => {
+export function Sparkles(props: ParticlesProps) {
 	const {
 		id,
 		className,
