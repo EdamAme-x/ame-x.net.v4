@@ -4,6 +4,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import IconImage from "@/assets/favicon.png";
 import { HeaderLinks } from "@/consts/headerLinks";
+import { LanternContainer } from "../ui/lantern";
 import { RotateGlowingBorder } from "../ui/rotate-glowing-boreder";
 
 export function Header() {
