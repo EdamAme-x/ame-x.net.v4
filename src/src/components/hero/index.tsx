@@ -11,8 +11,8 @@ export function Hero() {
 			<Sparkles
 				id="tsparticlesfullpage"
 				background="transparent"
-				minSize={0.2}
-				maxSize={0.6}
+				minSize={0.4}
+				maxSize={1.0}
 				particleDensity={100}
 				className="w-full h-screen"
 				particleColor="#0FAD78"
