@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 @layer base {
@@ -35,7 +35,11 @@
     @apply border-border;
   }
   body {
+    scrollbar-width: 0px;
     @apply bg-background text-foreground;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -68,4 +72,25 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+
+/* Custom */
+
+.text-gradient {
+  background-image: linear-gradient(135deg, #df2b2b, #d748ff, #6abeff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animation-hue-rotate {
+  animation: hue-rotate 10s ease-in-out infinite;
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
 }

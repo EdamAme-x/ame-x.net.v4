@@ -1,4 +1,11 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+	default: flattenColorPalette
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config = {
 	darkMode: ["class"],
@@ -66,15 +73,55 @@ const config = {
 				"accordion-up": {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" }
+				},
+				spotlight: {
+					"0%": {
+						opacity: "0",
+						transform: "translate(-72%, -62%) scale(0.5)"
+					},
+					"100%": {
+						opacity: "1",
+						transform: "translate(-50%,-40%) scale(1)"
+					}
 				}
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
-				"accordion-up": "accordion-up 0.2s ease-out"
+				"accordion-up": "accordion-up 0.2s ease-out",
+				spotlight: "spotlight 2s ease .75s 1 forwards"
+			},
+			textShadow: {
+				sm: "0 1px 2px var(--tw-shadow-color)",
+				DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+				lg: "0 8px 16px var(--tw-shadow-color)"
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")]
+	plugins: [
+		require("tailwindcss-animate"),
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+				{
+					"text-shadow": (value: string) => ({
+						textShadow: value
+					})
+				},
+				{ values: theme("textShadow") }
+			);
+		}),
+		addVariablesForColors
+	]
 } satisfies Config;
 
 export default config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+	let allColors = flattenColorPalette(theme("colors"));
+	let newVars = Object.fromEntries(
+		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+	);
+
+	addBase({
+		":root": newVars
+	});
+}

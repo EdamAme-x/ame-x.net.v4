@@ -6,5 +6,13 @@ export const HeaderLinks = [
 	{
 		name: "Blog",
 		path: "/blog"
+	},
+	{
+		name: "Projects",
+		path: "/projects"
+	},
+	{
+		name: "Contact",
+		path: "/contact"
 	}
-];
+] satisfies { name: string; path: string }[];
