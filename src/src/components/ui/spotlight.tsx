@@ -50,4 +50,4 @@ export function Spotlight({ className, fill }: SpotlightProps) {
 			</defs>
 		</svg>
 	);
-};
+}

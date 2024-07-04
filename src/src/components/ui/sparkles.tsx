@@ -431,4 +431,4 @@ export function Sparkles(props: ParticlesProps) {
 			)}
 		</motion.div>
 	);
-};
+}

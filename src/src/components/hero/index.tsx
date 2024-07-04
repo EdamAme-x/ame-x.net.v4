@@ -1,8 +1,11 @@
 import clsx from "clsx";
 import { GlassedButton } from "../ui/glassed-button";
+import { HoverPreview } from "../ui/hover-preview";
 import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
-import { Background } from "./background";
+import GithubVector from "@/assets/svg/github.svg";
+import XVector from "@/assets/svg/x.svg";
+import Image from "next/image";
 
 export function Hero() {
 	return (
@@ -11,8 +14,8 @@ export function Hero() {
 			<Sparkles
 				id="tsparticlesfullpage"
 				background="transparent"
-				minSize={0.4}
-				maxSize={1.0}
+				minSize={0.6}
+				maxSize={1.4}
 				particleDensity={100}
 				className="w-full h-screen"
 				particleColor="#0FAD78"
@@ -46,10 +49,18 @@ export function Hero() {
 						AMEX NET.
 					</span>
 				</h1>
-				<div>
+				<div className="mt-3 flex gap-4 justify-between items-center w-1/2">
 					<GlassedButton>
 						<span>About me</span>
 					</GlassedButton>
+					<div className="flex gap-4 items-center mr-5">
+						<HoverPreview className="text-white" url="https://github.com/EdamAme-x">
+                            <Image src={GithubVector} alt="github" width={24} height={24} />
+						</HoverPreview>
+                        <HoverPreview className="text-white" url="https://x.com/amex2189">
+                            <Image src={XVector} alt="x" width={24} height={24} />
+						</HoverPreview>
+					</div>
 				</div>
 			</div>
 		</div>
