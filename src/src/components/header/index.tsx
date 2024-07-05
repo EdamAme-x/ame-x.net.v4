@@ -33,7 +33,8 @@ export function Header() {
 							href={link.path}
 							key={link.path}
 							className={clsx(
-								"text-sm font-medium font-raleway"
+								"text-sm font-medium font-raleway",
+								"text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-300"
 							)}>
 							{link.name}
 						</a>
