@@ -35,6 +35,7 @@
     @apply border-border;
   }
   body {
+    will-change: transform;
     scrollbar-width: 0px;
     @apply bg-background text-foreground;
   }
