@@ -41,6 +41,7 @@ export function Rocket() {
 			model = gltf.scene;
 			const scale = 1.75;
 			model.scale.set(4 * scale, 4 * scale, 4 * scale);
+            model.position.set(0, 0, 0);
 			scene.add(model);
 		});
 
@@ -54,59 +55,109 @@ export function Rocket() {
 
 		let frameManager = 0;
 
-        class ShootingStar {
-            mesh: THREE.Mesh<THREE.BufferGeometry<THREE.NormalBufferAttributes>, THREE.Material | THREE.Material[], THREE.Object3DEventMap>
-            hev = 1
+		class ShootingStar {
+			mesh: THREE.Mesh<
+				THREE.BufferGeometry<THREE.NormalBufferAttributes>,
+				THREE.Material | THREE.Material[],
+				THREE.Object3DEventMap
+			>;
+			hev = 1;
 
+			constructor(baseColor: number | number[] = [0xabdbe3, 0x9e76B4, 0xaaffaa], geometry: THREE.BufferGeometry = new THREE.IcosahedronGeometry(0.25, 1)) {
+				this.mesh = new THREE.Mesh(
+					geometry,
+					new THREE.PointsMaterial({
+						color: Array.isArray(baseColor) ? baseColor[Math.floor(Math.random() * baseColor.length)] : baseColor,
+					})
+				);
+				this.mesh.position.set(0, 0, 0);
+				this.updateRandom();
+                this.updateHev();
+				scene.add(this.mesh);
+			}
+
+			update() {
+				this.mesh.position.y -= 0.125 * this.hev;
+				if (this.mesh.position.y < -10) {
+					this.updateRandom();
+					this.updateHev();
+				}
+			}
+
+			updateRandom() {
+				this.mesh.position.x = this.absNegaRandom(
+					Math.random() * (2 + Math.random()) + 2
+				);
+				this.mesh.position.y = 10;
+				this.mesh.position.z = this.absNegaRandom(
+					Math.random() * (2 + Math.random()) + 2
+				);
+			}
+
+			updateHev() {
+				this.hev = (1 + Math.random()) ** 2;
+			}
+
+			absNegaRandom(number: number) {
+				return Math.random() > 0.5 ? number : -number;
+			}
+		}
+
+        class RocketBubble extends ShootingStar {
             constructor() {
-                this.mesh = new THREE.Mesh(
-                    new THREE.BoxGeometry(0.5, 0.5, 0.5),
-                    new THREE.PointsMaterial({
-                        color: Math.floor(16677216 * Math.random())
-                    })
-                );
-                this.mesh.position.set(0, 0, 0);
-                this.updateRandom()
-                scene.add(this.mesh);
+                super(0xffffff, new THREE.DodecahedronGeometry(0.25, 0));
             }
 
             update() {
-                this.mesh.position.y -= 0.125 * this.hev;
-                if (this.mesh.position.y < -10) {
-                    this.updateRandom();
-                    this.updateHev();
-                }
-            }
+				this.mesh.position.y -= 0.1 * this.hev;
+				if (this.mesh.position.y < -5.5) {
+					this.updateRandom();
+					this.updateHev();
+				}
+			}
 
             updateRandom() {
-                this.mesh.position.x = this.absNegaRandom(Math.random() * 2 + 2);
-                this.mesh.position.y = 10;
-                this.mesh.position.z = this.absNegaRandom(Math.random() * 2 + 2);
-                this.updateColor();
-            }
-
-            updateHev() {
-                this.hev = (1 + Math.random()) ** 2
-            }
-
-            updateColor() {
-                if (!Array.isArray(this.mesh.material)) {
-                    this.mesh.material.blendColor = new THREE.Color(
-                        Math.floor(16777215 * Math.random())
-                    );
-                }
-            }
-
-            absNegaRandom(number: number) {
-                return Math.random() > 0.5 ? number : -number
-            }
+				this.mesh.position.x = this.absNegaRandom(
+					Math.random() ** 2 - 0.1
+				);
+				this.mesh.position.y = -4;
+				this.mesh.position.z = this.absNegaRandom(
+					Math.random() ** 2
+				);
+                const scale = 0.5 + Math.random();
+                this.mesh.scale.set(scale, scale, scale);
+			}
         }
 
-        const shootingStar = new ShootingStar();
-        const shootingStar2 = new ShootingStar();
-        const shootingStar3 = new ShootingStar();
-        const shootingStar4 = new ShootingStar();
+		const shootingStars = [
+			new ShootingStar(),
+			new ShootingStar(),
+			new ShootingStar(),
+			new ShootingStar(),
+			new ShootingStar(),
+			new ShootingStar(),
+			new ShootingStar(),
+			new ShootingStar(),
+		];
 
+        const rocketBubbles = [
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+            new RocketBubble(),
+        ]
+
+		const everyUpdater = (shootingStars: ShootingStar[]) => {
+			const cachedShootingStarsLength = shootingStars.length;
+			for (let i = 0; i < cachedShootingStarsLength; i++) {
+				shootingStars[i].update();
+			}
+		};
 
 		function animate() {
 			requestAnimationFrame(animate);
@@ -116,10 +167,8 @@ export function Rocket() {
 					frameManager = 0;
 				}
 				model.rotation.y += 0.025;
-                shootingStar.update();
-                shootingStar2.update();
-                shootingStar3.update();
-                shootingStar4.update();
+				everyUpdater(shootingStars);
+                everyUpdater(rocketBubbles);
 				frameManager++;
 			}
 			renderer.render(scene, camera);

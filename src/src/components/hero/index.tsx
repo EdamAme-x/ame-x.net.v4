@@ -11,7 +11,7 @@ import { Rocket } from "./rocket";
 export function Hero() {
 	return (
 		<div className={clsx("pt-14")}>
-			{/* <Spotlight fill="#0FAD78" className="top-0" />
+			<Spotlight fill="#0FAD78" className="top-0" />
 			<Sparkles
 				id="tsparticlesfullpage"
 				background="transparent"
@@ -20,7 +20,7 @@ export function Hero() {
 				particleDensity={100}
 				className="w-full h-screen"
 				particleColor="#0FAD78"
-			/> */}
+			/>
 			<div
 				className={clsx(
 					"absolute",
