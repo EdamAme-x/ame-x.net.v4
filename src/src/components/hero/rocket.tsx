@@ -54,23 +54,13 @@ export function Rocket() {
 
 		camera.position.set(0, 0, 10);
 
-		let frame = 0;
-
 		function animate() {
-			frame += 10;
 			requestAnimationFrame(animate);
-			if (frame % 15 === 0) {
-				// controls.update();
-				if (model) {
-                    model.rotation.x += 0.05;
-                    model.rotation.z += 0.05;
-				}
-				renderer.render(scene, camera);
-			} else {
-				if (frame > 6000) {
-					frame = 0;
-				}
+			if (model) {
+				model.rotation.x += 0.05;
+				model.rotation.y -= 0.05;
 			}
+			renderer.render(scene, camera);
 		}
 		animate();
 
