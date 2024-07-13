@@ -13,6 +13,13 @@ export const HeaderLinks = [
 	},
 	{
 		name: "Contact",
-		path: "/contact"
+		path: "/contact",
+		separator: true,
+		button: "flat"
 	}
-] satisfies { name: string; path: string }[];
+] as {
+	name: string;
+	path: string;
+	separator?: true;
+	button?: "flat" | "skeleton";
+}[];

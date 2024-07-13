@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { clsx } from "clsx";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import "./loader.css";
 
 export function Rocket() {
 	const canvasRef = useRef<HTMLDivElement>(null);
@@ -37,23 +38,26 @@ export function Rocket() {
 		let model: THREE.Group<THREE.Object3DEventMap> | null;
 
 		const loader = new GLTFLoader();
-		loader.load("/data/rocket/scene.gltf", function (gltf) {
+		loader.load("https://object.ame-x.net/scene.gltf", function (gltf) {
 			model = gltf.scene;
 			const scale = 1.75;
 			model.scale.set(4 * scale, 4 * scale, 4 * scale);
-            model.position.set(0, 0, 0);
+			model.position.set(0, 0, 0);
+			model.rotation.y = -Math.PI / 2 - 0.5;
 			scene.add(model);
-		});
 
-		// const controls = new OrbitControls(camera, renderer.domElement);
-		// controls.enableDamping = true;
-		// controls.dampingFactor = 0.25;
-		// controls.enableZoom = true;
+			setTimeout(() => {
+				canvasRef.current?.setAttribute("style", "display: block");
+				document
+					.querySelector(".three-loader-root")
+					?.setAttribute("style", "display: none");
+			}, 10);
+		});
 
 		camera.position.set(0, 0, 10);
 		camera.rotation.z += THREE.MathUtils.degToRad(45);
 
-		let frameManager = 0;
+		// let frameManager = 0;
 
 		class ShootingStar {
 			mesh: THREE.Mesh<
@@ -63,16 +67,26 @@ export function Rocket() {
 			>;
 			hev = 1;
 
-			constructor(baseColor: number | number[] = [0xabdbe3, 0x9e76B4, 0xaaffaa], geometry: THREE.BufferGeometry = new THREE.IcosahedronGeometry(0.25, 1)) {
+			constructor(
+				baseColor: number | number[] = [0xabdbe3, 0x9e76b4, 0xaaffaa],
+				geometry: THREE.BufferGeometry = new THREE.IcosahedronGeometry(
+					0.25,
+					1
+				)
+			) {
 				this.mesh = new THREE.Mesh(
 					geometry,
 					new THREE.PointsMaterial({
-						color: Array.isArray(baseColor) ? baseColor[Math.floor(Math.random() * baseColor.length)] : baseColor,
+						color: Array.isArray(baseColor)
+							? baseColor[
+									Math.floor(Math.random() * baseColor.length)
+								]
+							: baseColor
 					})
 				);
 				this.mesh.position.set(0, 0, 0);
 				this.updateRandom();
-                this.updateHev();
+				this.updateHev();
 				scene.add(this.mesh);
 			}
 
@@ -103,12 +117,12 @@ export function Rocket() {
 			}
 		}
 
-        class RocketBubble extends ShootingStar {
-            constructor() {
-                super(0xffffff, new THREE.DodecahedronGeometry(0.25, 0));
-            }
+		class RocketBubble extends ShootingStar {
+			constructor() {
+				super(0xffffff, new THREE.DodecahedronGeometry(0.25, 0));
+			}
 
-            update() {
+			update() {
 				this.mesh.position.y -= 0.1 * this.hev;
 				if (this.mesh.position.y < -5.5) {
 					this.updateRandom();
@@ -116,61 +130,61 @@ export function Rocket() {
 				}
 			}
 
-            updateRandom() {
+			updateRandom() {
 				this.mesh.position.x = this.absNegaRandom(
 					Math.random() ** 2 - 0.1
 				);
 				this.mesh.position.y = -4;
 				this.mesh.position.z = this.absNegaRandom(
-					Math.random() ** 2
+					Math.random() ** 2 + 0.5
 				);
-                const scale = 0.5 + Math.random();
-                this.mesh.scale.set(scale, scale, scale);
+				const scale = 0.5 + Math.random();
+				this.mesh.scale.set(scale, scale, scale);
 			}
-        }
+		}
 
-		const shootingStars = [
-			new ShootingStar(),
-			new ShootingStar(),
-			new ShootingStar(),
-			new ShootingStar(),
-			new ShootingStar(),
-			new ShootingStar(),
-			new ShootingStar(),
-			new ShootingStar(),
-		];
+		// const shootingStars: ShootingStar[] = [
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar(),
+		// 	// new ShootingStar()
+		// ];
 
-        const rocketBubbles = [
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-            new RocketBubble(),
-        ]
+		// const rocketBubbles: RocketBubble[] = [
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble(),
+		// 	// new RocketBubble()
+		// ];
 
-		const everyUpdater = (shootingStars: ShootingStar[]) => {
-			const cachedShootingStarsLength = shootingStars.length;
-			for (let i = 0; i < cachedShootingStarsLength; i++) {
-				shootingStars[i].update();
-			}
-		};
+		// const everyUpdater = (shootingStars: ShootingStar[]) => {
+		// 	const cachedShootingStarsLength = shootingStars.length;
+		// 	for (let i = 0; i < cachedShootingStarsLength; i++) {
+		// 		shootingStars[i].update();
+		// 	}
+		// };
 
 		function animate() {
 			requestAnimationFrame(animate);
-			if (model) {
-				if (frameManager % 3 === 0) {
-					model.rotation.y += 0.005;
-					frameManager = 0;
-				}
-				model.rotation.y += 0.025;
-				everyUpdater(shootingStars);
-                everyUpdater(rocketBubbles);
-				frameManager++;
-			}
+			// if (model) {
+			// 	if (frameManager % 3 === 0) {
+			// 		model.rotation.y += 0.005;
+			// 		frameManager = 0;
+			// 	}
+			// 	model.rotation.y += 0.025;
+			// 	everyUpdater(shootingStars);
+			// 	everyUpdater(rocketBubbles);
+			// 	frameManager++;
+			// }
 			renderer.render(scene, camera);
 		}
 		animate();
@@ -187,5 +201,22 @@ export function Rocket() {
 		};
 	});
 
-	return <div ref={canvasRef}></div>;
+	return (
+		<>
+			<div ref={canvasRef} style={{ display: "none" }}></div>
+			<Loading className="three-loader-root" />
+		</>
+	);
+}
+
+function Loading({ className }: { className?: string }) {
+	return (
+		<div
+			className={clsx(
+				"w-full h-full flex justify-center items-center",
+				className
+			)}>
+			<div className="three-loader"></div>
+		</div>
+	);
 }

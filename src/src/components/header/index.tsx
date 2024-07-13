@@ -1,22 +1,25 @@
 "use client";
 
+import { Fragment } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import IconImage from "@/assets/favicon.png";
 import { HeaderLinks } from "@/consts/headerLinks";
-import { LanternContainer } from "../ui/lantern";
-import { RotateGlowingBorder } from "../ui/rotate-glowing-border";
+import { Button } from "../ui/button";
+import { GlassedButton } from "../ui/glassed-button";
+import { HoverBorderGradient } from "../ui/hover-gradient";
+import { Separator } from "../ui/separator";
 
 export function Header() {
 	return (
 		<header
 			className={clsx(
 				"flex items-center gap-5",
-				"fixed top-0 left-0 right-0 z-[49]",
-				"h-14",
+				"fixed z-[49]",
+				"h-14 w-screen",
 				"rounded-b-xl",
-				"py-2 px-5 mx-5",
-				"backdrop-blur-md"
+				"py-3 px-5 mx-5",
+				"backdrop-blur-sm"
 			)}>
 			<Image
 				src={IconImage}
@@ -24,23 +27,55 @@ export function Header() {
 				priority
 				width={48}
 				height={48}
-				className={clsx("w-12 h-12", "col-span-2")}
+				className={clsx("w-12 h-12")}
 			/>
-			<RotateGlowingBorder containerClassName="h-10 bg-[#0C1222] mx-auto">
-				<div className={clsx("flex justify-center gap-x-6 px-10")}>
+			<div className="mx-auto">
+				<div
+					className={clsx(
+						"rounded-md",
+						"flex justify-center items-center gap-x-6",
+						"px-2 py-1",
+						"shadow-sm",
+						"h-10"
+					)}
+					aria-label="TopNavigation">
 					{HeaderLinks.map(link => (
-						<a
-							href={link.path}
-							key={link.path}
-							className={clsx(
-								"text-sm font-medium font-raleway",
-								"text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-300"
-							)}>
-							{link.name}
-						</a>
+						<Fragment key={link.path}>
+							{link.separator && (
+								<Separator orientation="vertical" />
+							)}
+							{link.button ? (
+								link.button === "flat" ? (
+									<a href={link.path}>
+										<GlassedButton>
+											<span>{link.name}</span>
+										</GlassedButton>
+									</a>
+								) : (
+									<a href={link.path}>
+										<Button variant="ghost">
+											{link.name}
+										</Button>
+									</a>
+								)
+							) : (
+								<a
+									href={link.path}
+									className={clsx(
+										"text-md font-semibold font-raleway text-[#A8A8A8]",
+										"bg-transparent",
+										"rounded-md",
+										"hover:bg-neutral-300/10 hover:text-white",
+										"px-4 py-2",
+										"transition-all duration-150"
+									)}>
+									{link.name}
+								</a>
+							)}
+						</Fragment>
 					))}
 				</div>
-			</RotateGlowingBorder>
+			</div>
 		</header>
 	);
 }

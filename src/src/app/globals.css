@@ -37,7 +37,7 @@
   body {
     will-change: transform;
     scrollbar-width: 0px;
-    @apply bg-background text-foreground;
+    @apply bg-[#010101] text-foreground;
   }
   body::-webkit-scrollbar {
     display: none;
@@ -84,7 +84,7 @@
 }
 
 .animation-hue-rotate {
-  animation: hue-rotate 10s ease-in-out infinite;
+  animation: hue-rotate 150s ease-in-out infinite;
 }
 
 @keyframes hue-rotate {
