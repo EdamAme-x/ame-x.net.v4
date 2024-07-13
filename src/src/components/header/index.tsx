@@ -7,7 +7,6 @@ import IconImage from "@/assets/favicon.png";
 import { HeaderLinks } from "@/consts/headerLinks";
 import { Button } from "../ui/button";
 import { GlassedButton } from "../ui/glassed-button";
-import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Separator } from "../ui/separator";
 
 export function Header() {
@@ -15,7 +14,7 @@ export function Header() {
 		<header
 			className={clsx(
 				"flex items-center gap-5",
-				"fixed z-[49]",
+				"fixed top-0 z-[49]",
 				"h-14 w-screen",
 				"rounded-b-xl",
 				"py-3 px-5 mx-5",

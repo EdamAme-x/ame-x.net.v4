@@ -2,7 +2,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import GithubVector from "@/assets/svg/github.svg";
 import XVector from "@/assets/svg/x.svg";
-import { WaveSVG } from "../header/wave-svg";
+import { Wave2SVG, WaveSVG } from "../header/svg";
 import { HoverBorderGradient } from "../ui/hover-gradient";
 import { HoverPreview } from "../ui/hover-preview";
 import { Sparkles } from "../ui/sparkles";
@@ -12,10 +12,16 @@ import { Whoami } from "./whoami";
 export function Hero() {
 	return (
 		<div className={clsx("pt-14")}>
-			<div className="absolute top-0 left-0 right-0 bottom-0 opacity-25 filter blur-sm">
+			<div className="absolute top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
 				<WaveSVG />
 			</div>
-			<Spotlight fill="#AAADFF" className="top-0 h-screen opacity-75" />
+			<div className="absolute top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
+				<Wave2SVG />
+			</div>
+			<Spotlight
+				fill="#F78DA7"
+				className="top-20 h-screen opacity-50 transform rotate-90"
+			/>
 			<Sparkles
 				id="tsparticlesfullpage"
 				background="transparent"
@@ -23,7 +29,7 @@ export function Hero() {
 				maxSize={1.8}
 				particleDensity={10}
 				className="absolute top-0 w-full h-[1000vh]"
-				particleColor="#57CfAB"
+				particleColor="#F78DA7"
 			/>
 			<div
 				className={clsx(
@@ -34,7 +40,7 @@ export function Hero() {
 					"flex justify-center items-center",
 					"w-screen h-screen"
 				)}>
-				<div className="w-1/2 flex flex-col justify-center items-center">
+				<div className="w-screen flex flex-col justify-center items-center">
 					<div className="flex flex-col mb-1">
 						<h1
 							className={clsx(
@@ -58,7 +64,7 @@ export function Hero() {
 							</span>
 						</h1>
 						<Whoami />
-						<div className="mt-5 flex items-center gap-4 justify-between">
+						<div className="mt-14 flex items-center gap-4 justify-between">
 							<HoverBorderGradient>About me</HoverBorderGradient>
 							<div className="flex gap-4 items-center pr-5">
 								<HoverPreview
@@ -85,7 +91,6 @@ export function Hero() {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/2 h-screen">a</div>
 			</div>
 		</div>
 	);

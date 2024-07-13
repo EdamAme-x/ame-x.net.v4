@@ -84,3 +84,90 @@ export function WaveSVG() {
 		</svg>
 	);
 }
+
+export function Wave2SVG() {
+	return (
+		<svg
+			id="svg"
+			viewBox="0 0 1440 690"
+			xmlns="http://www.w3.org/2000/svg"
+			className="transition duration-300 ease-in-out delay-150">
+			<defs>
+				<linearGradient
+					id="gradient"
+					x1="0%"
+					y1="50%"
+					x2="100%"
+					y2="50%">
+					<stop offset="5%" stopColor="#F78DA7"></stop>
+					<stop offset="95%" stopColor="#8ED1FC"></stop>
+				</linearGradient>
+			</defs>
+			<path
+				d="M 0,700 L 0,405 C 95.94258373205744,433.066985645933 191.8851674641149,461.13397129186603 280,449 C 368.1148325358851,436.86602870813397 448.401913875598,384.53110047846883 534,351 C 619.598086124402,317.46889952153117 710.5071770334929,302.7416267942584 819,280 C 927.4928229665071,257.2583732057416 1053.5693779904307,226.5023923444976 1160,196 C 1266.4306220095693,165.4976076555024 1353.2153110047848,135.2488038277512 1440,105 L 1440,700 L 0,700 Z"
+				stroke="none"
+				strokeWidth="0"
+				fill="url(#gradient)"
+				fillOpacity="0.265"
+				className="transition-all duration-300 ease-in-out delay-150 path-0"
+				transform="rotate(-180 720 350)"></path>
+			<defs>
+				<linearGradient
+					id="gradient"
+					x1="0%"
+					y1="50%"
+					x2="100%"
+					y2="50%">
+					<stop offset="5%" stopColor="#F78DA7"></stop>
+					<stop offset="95%" stopColor="#8ED1FC"></stop>
+				</linearGradient>
+			</defs>
+			<path
+				d="M 0,700 L 0,545 C 68.72727272727272,572.4545454545455 137.45454545454544,599.9090909090909 247,572 C 356.54545454545456,544.0909090909091 506.9090909090909,460.81818181818187 624,417 C 741.0909090909091,373.18181818181813 824.909090909091,368.8181818181818 911,365 C 997.090909090909,361.1818181818182 1085.4545454545455,357.90909090909093 1174,338 C 1262.5454545454545,318.09090909090907 1351.2727272727273,281.5454545454545 1440,245 L 1440,700 L 0,700 Z"
+				stroke="none"
+				strokeWidth="0"
+				fill="url(#gradient)"
+				fillOpacity="0.4"
+				className="transition-all duration-300 ease-in-out delay-150 path-1"
+				transform="rotate(-180 720 350)"></path>
+			<defs>
+				<linearGradient
+					id="gradient"
+					x1="0%"
+					y1="50%"
+					x2="100%"
+					y2="50%">
+					<stop offset="5%" stopColor="#F78DA7"></stop>
+					<stop offset="95%" stopColor="#8ED1FC"></stop>
+				</linearGradient>
+			</defs>
+			<path
+				d="M 0,700 L 0,685 C 89.35885167464113,672.5885167464114 178.71770334928226,660.1770334928229 279,641 C 379.28229665071774,621.8229665071771 490.48803827751203,595.8803827751196 579,583 C 667.511961722488,570.1196172248804 733.3301435406698,570.3014354066985 833,559 C 932.6698564593302,547.6985645933015 1066.1913875598088,524.9138755980862 1173,494 C 1279.8086124401912,463.0861244019139 1359.9043062200956,424.0430622009569 1440,385 L 1440,700 L 0,700 Z"
+				stroke="none"
+				strokeWidth="0"
+				fill="url(#gradient)"
+				fillOpacity="0.53"
+				className="transition-all duration-300 ease-in-out delay-150 path-2"
+				transform="rotate(-180 720 350)"></path>
+			<defs>
+				<linearGradient
+					id="gradient"
+					x1="0%"
+					y1="50%"
+					x2="100%"
+					y2="50%">
+					<stop offset="5%" stopColor="#F78DA7"></stop>
+					<stop offset="95%" stopColor="#8ED1FC"></stop>
+				</linearGradient>
+			</defs>
+			<path
+				d="M 0,700 L 0,825 C 82.87081339712918,837.4497607655503 165.74162679425837,849.8995215311005 262,827 C 358.25837320574163,804.1004784688995 467.9043062200958,745.8516746411483 587,722 C 706.0956937799042,698.1483253588517 834.6411483253588,708.6937799043062 915,683 C 995.3588516746412,657.3062200956938 1027.531100478469,595.3732057416267 1107,563 C 1186.468899521531,530.6267942583733 1313.2344497607655,527.8133971291866 1440,525 L 1440,700 L 0,700 Z"
+				stroke="none"
+				strokeWidth="0"
+				fill="url(#gradient)"
+				fillOpacity="1"
+				className="transition-all duration-300 ease-in-out delay-150 path-3"
+				transform="rotate(-180 720 350)"></path>
+		</svg>
+	);
+}
