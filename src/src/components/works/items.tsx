@@ -1,48 +1,16 @@
 ;
-
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { AudioLinesIcon, ExternalLink, GitPullRequestCreateArrowIcon, HammerIcon, UsersIcon } from "lucide-react";
+import { AudioLinesIcon, AwardIcon, ExternalLink, GitPullRequestCreateArrowIcon, HammerIcon, PanelsTopLeftIcon, RouterIcon, UserPlusIcon, UsersIcon } from "lucide-react";
 import DenoLogo from "@/assets/svg/deno.svg";
 import GoLogo from "@/assets/svg/go.svg";
 import HonoLogo from "@/assets/svg/hono.svg";
 import MisskeyLogo from "@/assets/svg/misskey.svg";
-import SpotifyLogo from "@/assets/svg/spotify.svg";
 import TypeScriptLogo from "@/assets/svg/typescript.svg";
+import { SNS } from "../hero/sns";
 import { GlowingStarsBackgroundCard } from "../ui/glowing-star-bg";
-
-
-;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const MyContributions = () => {
@@ -133,25 +101,53 @@ const MyContributions = () => {
 	);
 };
 const MyAchievement = () => {
-    const variants = {
+    const first = {
         initial: {
-            rotateZ: -30
+            rotate: -5
         },
         hover: {
-            rotateZ: 0
+            rotate: 0
+        }
+    }
+
+    const second = {
+        initial: {
+            rotate: 5
+        },
+        hover: {
+            rotate: 0
         }
     }
 
 	return (
 		<motion.div
-            variants={variants}
-			className="flex flex-col w-full h-full dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 py-2 px-3">
-            <div className="border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-3 p-3">
-                <span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2"><UsersIcon className="h-4 w-4" /> Users of my service</span>
-                <div className="border border-neutral-100/25 h-full w-full rounded-md flex p-3">
-                    <span className="font-semibold text-neutral-100 text-xl">5000+</span>
+            initial="initial"
+			whileHover="hover"
+			className="flex flex-col w-full h-full dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 px-3">
+            <motion.div variants={first} className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
+                <div className="flex justify-between">
+                    <span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2"><UsersIcon className="h-4 w-4 text-emerald-500" /> Users of my service</span>
+                    <div className="flex gap-x-1">
+                        <HammerIcon width={12} height={12} className="text-white" />
+                        <PanelsTopLeftIcon width={12} height={12} className="text-white" />
+                        <RouterIcon width={12} height={12} className="text-white" />
+                    </div>
                 </div>
-            </div>
+                <div className="border border-neutral-100/25 h-full w-full rounded-md flex p-3">
+                    <span className="font-semibold text-neutral-100 text-md">5000+</span>
+                </div>
+            </motion.div>
+             <motion.div variants={second} className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
+                <div className="flex justify-between">
+                    <span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2"><UserPlusIcon className="h-4 w-4 text-cyan-500" /> My followers</span>
+                <div className="flex gap-x-1">
+                    <SNS size={12} />
+                </div>
+                </div>
+                <div className="border border-neutral-100/25 h-full w-full rounded-md flex justify-between p-3">
+                    <span className="font-semibold text-neutral-100 text-md">2000+</span>
+                </div>
+            </motion.div>
 		</motion.div>
 	);
 };
@@ -195,8 +191,8 @@ const MyTechs = () => {
 			<motion.div
                 variants={first}
 				className={clsx(
-					"h-full text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
-					"dark:border-cyan-500/25 border flex flex-col items-center justify-center"
+					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
+					"dark:border-white/20 border flex flex-col items-center justify-center"
 				)}>
 				<Image
 					src={GoLogo}
@@ -214,8 +210,8 @@ const MyTechs = () => {
 			</motion.div>
 			<motion.div
 				className={clsx(
-					"h-full text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
-					"dark:border-cyan-500/25 border flex flex-col items-center justify-center"
+					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
+					"dark:border-white/20 border flex flex-col items-center justify-center"
 				)}>
 				<Image
 					src={TypeScriptLogo}
@@ -234,8 +230,8 @@ const MyTechs = () => {
 			<motion.div
             variants={second}
 				className={clsx(
-					"h-full text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
-					"dark:border-cyan-500/25 border flex flex-col items-center justify-center"
+					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
+					"dark:border-white/20 border flex flex-col items-center justify-center"
 				)}>
 				<Image
 					src={DenoLogo}
@@ -339,7 +335,7 @@ export const Items = [
 		description: <span className="text-sm">Achievement of my works.</span>,
 		header: <MyAchievement />,
 		className: "md:col-span-1",
-		icon: <></>
+		icon: <AwardIcon width={18} height={18} />
 	},
 	{
 		title: "Listening Music",
@@ -347,10 +343,15 @@ export const Items = [
 			<span className="text-sm">
 				I listen to music and play it in{" "}
 				<a
-                    className="text-emerald-400 inline-flex items-start"
+					className="text-emerald-400 inline-flex items-start"
 					href="https://open.spotify.com/user/31zhwofz73s6j6d4kpna5hovrrc4?si=d77d21773b354bd7"
 					target="_blank">
-					Spotify <ExternalLink width={8} height={8} className="text-neutral-100 mt-[2px] ml-[2px]" />
+					Spotify{" "}
+					<ExternalLink
+						width={8}
+						height={8}
+						className="text-neutral-100 mt-[2px] ml-[2px]"
+					/>
 				</a>
 			</span>
 		),

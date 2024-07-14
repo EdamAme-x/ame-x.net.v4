@@ -4,4 +4,4 @@ Develop now
 
 Next.js x TailwindCSS x Shadcn-ui x framer-motion
 
-TODO: 3D Object / About me / Other page / ac
+コードを使用するならライセンスは必ず書いてね。
