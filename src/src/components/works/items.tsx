@@ -2,12 +2,12 @@ import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { AudioLinesIcon, AwardIcon, ExternalLink, FolderIcon, GitPullRequestCreateArrowIcon, HammerIcon, MessageCircleQuestionIcon, PanelsTopLeftIcon, RouterIcon, UserPlusIcon, UsersIcon } from "lucide-react";
+import FaviconPng from "@/assets/favicon.png";
 import DenoLogo from "@/assets/svg/deno.svg";
 import GoLogo from "@/assets/svg/go.svg";
 import HonoLogo from "@/assets/svg/hono.svg";
 import MisskeyLogo from "@/assets/svg/misskey.svg";
 import TypeScriptLogo from "@/assets/svg/typescript.svg";
-import FaviconPng from "@/assets/favicon.png";
 import { SNS } from "../hero/sns";
 import { GlowingStarsBackgroundCard } from "../ui/glowing-star-bg";
 
@@ -249,6 +249,8 @@ const MyTechs = () => {
 		</motion.div>
 	);
 };
+
+
 const Questions = () => {
 	const variants = {
 		initial: {
@@ -275,32 +277,68 @@ const Questions = () => {
 		}
 	};
 
+    const messages = [
+		"Hello, Amex.\nAre you accepting a job and a request?",
+		"Sure, I am always accepting it.",
+		"Where should I contact you from?",
+		<span key={3}>
+			<a
+				href="https://twitter.com/amex2189"
+				target="_blank"
+				className="text-cyan-500">
+				Here
+			</a>
+			, you can find me.
+		</span>,
+		"Thanks, and I have one more question.",
+		"",
+		"I was wondering, what kinds of projects are you open to?.",
+		<span key={7}>
+			Ok, I am accepting &apos;Web&apos;, &apos;Backend&apos;, &apos;help
+			me&apos; and &apos;create any tool&apos;.
+		</span>,
+		"Thanks for your time."
+	];
+
 	return (
 		<motion.div
 			initial="initial"
 			whileHover="animate"
 			className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
-			<motion.div
-				variants={variantsSecond}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
-				<p className="text-xs text-neutral-500">Use PHP.</p>
-				<div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-emerald-500 flex-shrink-0 transform rotate-45" />
-			</motion.div>
-            <motion.div
-				variants={variants}
-				className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
-				<Image
-					src={FaviconPng}
-					alt="avatar"
-					height="100"
-					width="100"
-					className="rounded-full h-10 w-10"
-				/>
-				<p className="text-xs text-neutral-500">
-					There are a lot of cool framerworks out there like React,
-					Angular, Vue, Svelte that can make your life ....
-				</p>
-			</motion.div>
+            {
+                messages.map((message, i) => (
+                message !== "" &&
+                    (i % 2 === 1
+                        ? <motion.div
+                            key={i}
+                            variants={variants}
+                            className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
+                            <Image
+                                src={DenoLogo}
+                                alt="avatar"
+                                height="100"
+                                width="100"
+                                className="rounded-full h-6 w-6"
+                            />
+                            <p className={clsx("text-xs text-neutral-300", messages.length > 20 && "text-[0.6rem]")}>
+                                {message}
+                            </p>
+                        </motion.div>
+                        : <motion.div
+                            key={i}
+                            variants={variantsSecond}
+                            className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2 pl-3 items-center justify-end space-x-2 max-w-[95%] ml-auto bg-white dark:bg-black">
+                            <p className="text-xs text-neutral-500">
+                                {message}
+                            </p>
+                            <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-emerald-500 flex-shrink-0 transform rotate-45" />
+                        </motion.div>
+                    )
+                ))
+            }
+        <div className="h-6 w-2/5 ml-auto border border-white/[0.2] rounded-2xl flex items-center justify-center">
+                <a href="https://twitter.com/amex2189" target="_blank" className="text-xs text-neutral-500">Hear more.</a>
+            </div>
 		</motion.div>
 	);
 };
