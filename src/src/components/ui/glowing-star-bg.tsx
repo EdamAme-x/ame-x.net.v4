@@ -22,13 +22,13 @@ export const GlowingStarsBackgroundCard = ({
 				setMouseEnter(false);
 			}}
 			className={cn(
-				"bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600",
+				"px-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600",
 				className
 			)}>
 			<div className="flex justify-center items-center">
 				<Illustration mouseEnter={mouseEnter} />
+				<div>{children}</div>
 			</div>
-			<div className="px-2 pb-6">{children}</div>
 		</div>
 	);
 };
@@ -61,6 +61,21 @@ export const GlowingStarsTitle = ({
 	);
 };
 
+const createWave = () => {
+	let currentFrame = [1, 20, 39, 58, 77, 96, 78, 61, 44, 27, 10, 29, 48, 67, 86, 105, 89, 72];
+
+	const next = () => {
+		const nextFrame = currentFrame.map((i) => {
+			const baseIndex = Math.floor(i / 18) * 18;
+			return baseIndex + (((i % 18) + 1) % 18);
+		});
+		currentFrame = nextFrame;
+		return nextFrame;
+	};
+
+	return next
+}
+
 export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
 	const stars = 108;
 	const columns = 18;
@@ -70,12 +85,11 @@ export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
 	const highlightedStars = useRef<number[]>([]);
 
 	useEffect(() => {
+		const wave = createWave();
 		const interval = setInterval(() => {
-			highlightedStars.current = Array.from({ length: 5 }, () =>
-				Math.floor(Math.random() * stars)
-			);
+			highlightedStars.current = wave();
 			setGlowingStars([...highlightedStars.current]);
-		}, 3000);
+		}, 4000);
 
 		return () => clearInterval(interval);
 	}, []);
@@ -90,7 +104,7 @@ export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
 			}}>
 			{[...Array(stars)].map((_, starIdx) => {
 				const isGlowing = glowingStars.includes(starIdx);
-				const delay = (starIdx % 10) * 0.1;
+				const delay = (starIdx % 10) * 0.1 * (starIdx / 10);
 				const staticDelay = starIdx * 0.01;
 				return (
 					<div
@@ -150,7 +164,7 @@ const Glow = ({ delay }: { delay: number }) => {
 			exit={{
 				opacity: 0
 			}}
-			className="absolute  left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-blue-500 blur-[1px] shadow-2xl shadow-blue-400"
+			className="absolute  left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-emerald-600 blur-[1px] shadow-2xl shadow-emerald-400"
 		/>
 	);
 };

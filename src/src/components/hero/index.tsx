@@ -8,11 +8,11 @@ import { Whoami } from "./whoami";
 
 export function Hero() {
 	return (
-		<div className={clsx("pt-14", "h-screen")}>
-			<div className="absolute top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
+		<div className={clsx("pt-14", "h-[85vh]")}>
+			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
 				<WaveSVG />
 			</div>
-			<div className="absolute top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
+			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
 				<Wave2SVG />
 			</div>
 			<Spotlight
