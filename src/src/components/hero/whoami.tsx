@@ -1,9 +1,8 @@
-import { Fragment } from "react";
 import { FlipWords } from "../ui/flip-word";
 
 export function Whoami() {
 	return (
-		<div className="text-2xl font-medium text-gray-400">
+		<div className="text-3xl font-medium text-gray-400 ml-[20%] mt-2">
 			<span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
 				I&apos;m{" "}
 			</span>
@@ -15,7 +14,7 @@ export function Whoami() {
 				]}
 				colors={[
 					"from-cyan-400 to-cyan-600",
-					"from-emerald-200 to-green-300",
+					"from-emerald-200 to-green-700",
 					"from-red-400 to-red-600"
 				]}
 				containerClassName="font-bold bg-clip-text text-transparent bg-gradient-to-b"

@@ -41,7 +41,10 @@ export function Header() {
 					{HeaderLinks.map(link => (
 						<Fragment key={link.path}>
 							{link.separator && (
-								<Separator orientation="vertical" />
+								<Separator
+									orientation="vertical"
+									className="bg-white/25 rounded-md"
+								/>
 							)}
 							{link.button ? (
 								link.button === "flat" ? (

@@ -15,7 +15,7 @@ type ParticlesProps = {
 	minSize?: number;
 	maxSize?: number;
 	speed?: number;
-	particleColor?: string;
+	particleColor?: string | string[];
 	particleDensity?: number;
 };
 export function Sparkles(props: ParticlesProps) {

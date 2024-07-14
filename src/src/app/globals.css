@@ -32,6 +32,7 @@
 
 @layer base {
   * {
+    scroll-behavior: smooth;
     @apply border-border;
   }
   body {
