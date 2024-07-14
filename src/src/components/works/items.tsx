@@ -1,14 +1,13 @@
-;
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { AudioLinesIcon, AwardIcon, ExternalLink, GitPullRequestCreateArrowIcon, HammerIcon, PanelsTopLeftIcon, RouterIcon, UserPlusIcon, UsersIcon } from "lucide-react";
+import { AudioLinesIcon, AwardIcon, ExternalLink, FolderIcon, GitPullRequestCreateArrowIcon, HammerIcon, MessageCircleQuestionIcon, PanelsTopLeftIcon, RouterIcon, UserPlusIcon, UsersIcon } from "lucide-react";
 import DenoLogo from "@/assets/svg/deno.svg";
 import GoLogo from "@/assets/svg/go.svg";
 import HonoLogo from "@/assets/svg/hono.svg";
 import MisskeyLogo from "@/assets/svg/misskey.svg";
 import TypeScriptLogo from "@/assets/svg/typescript.svg";
+import FaviconPng from "@/assets/favicon.png";
 import { SNS } from "../hero/sns";
 import { GlowingStarsBackgroundCard } from "../ui/glowing-star-bg";
 
@@ -153,7 +152,7 @@ const MyAchievement = () => {
 };
 const ListeningMusic = () => {
 	return (
-		<GlowingStarsBackgroundCard className="bg-transparent border-none h-0" />
+		<GlowingStarsBackgroundCard className="bg-transparent border-none h-0 hidden md:block" />
 	);
 };
 const MyTechs = () => {
@@ -250,7 +249,7 @@ const MyTechs = () => {
 		</motion.div>
 	);
 };
-const SkeletonFive = () => {
+const Questions = () => {
 	const variants = {
 		initial: {
 			x: 0
@@ -282,10 +281,16 @@ const SkeletonFive = () => {
 			whileHover="animate"
 			className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
 			<motion.div
+				variants={variantsSecond}
+				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
+				<p className="text-xs text-neutral-500">Use PHP.</p>
+				<div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-emerald-500 flex-shrink-0 transform rotate-45" />
+			</motion.div>
+            <motion.div
 				variants={variants}
 				className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
-				<img
-					src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+				<Image
+					src={FaviconPng}
 					alt="avatar"
 					height="100"
 					width="100"
@@ -295,12 +300,6 @@ const SkeletonFive = () => {
 					There are a lot of cool framerworks out there like React,
 					Angular, Vue, Svelte that can make your life ....
 				</p>
-			</motion.div>
-			<motion.div
-				variants={variantsSecond}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
-				<p className="text-xs text-neutral-500">Use PHP.</p>
-				<div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
 			</motion.div>
 		</motion.div>
 	);
@@ -360,14 +359,14 @@ export const Items = [
 		icon: <AudioLinesIcon width={18} height={18} />
 	},
 	{
-		title: "Text Summarization",
+		title: "Questions",
 		description: (
 			<span className="text-sm">
-				Summarize your lengthy documents with AI technology.
+				About the questions that you may have.
 			</span>
 		),
-		header: <SkeletonFive />,
-		className: "md:col-span-1",
-		icon: <></>
+		header: <Questions />,
+		className: "md:col-span-1 md:row-span-2",
+		icon: <MessageCircleQuestionIcon width={18} height={18} />
 	}
 ];
