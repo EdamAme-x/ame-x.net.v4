@@ -1,14 +1,15 @@
+;
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { HammerIcon } from "lucide-react";
+import { ExternalLink, GitPullRequestCreateArrowIcon, HammerIcon } from "lucide-react";
 import DenoLogo from "@/assets/svg/deno.svg";
 import GoLogo from "@/assets/svg/go.svg";
-import TypeScriptLogo from "@/assets/svg/typescript.svg";
 import HonoLogo from "@/assets/svg/hono.svg";
 import MisskeyLogo from "@/assets/svg/misskey.svg";
-import FaviconPng from "@/assets/favicon.png";
+import TypeScriptLogo from "@/assets/svg/typescript.svg";
+
 
 const MyContributions = () => {
 	const variants = {
@@ -45,7 +46,7 @@ const MyContributions = () => {
 			className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
 			<motion.div
 				variants={variants}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-white dark:bg-black">
+				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 bg-white dark:bg-black">
                 <Image
 					src={HonoLogo}
 					alt="logo"
@@ -53,13 +54,16 @@ const MyContributions = () => {
 					width="100"
 					className="h-6 w-6 flex-shrink-0 transform scale-[1.1]"
 				/>
-				<div className="w-full h-4 inline-flex items-center">
-                    <span className="font-medium text-neutral-600 text-sm pt-.5">Hono.js</span>
+				<div className="w-full h-4 inline-flex items-center justify-between">
+                    <span className="font-semibold text-neutral-100 text-sm pt-.5">Hono.js</span>
+                    <a href="https://hono.dev/" target="_blank">
+                        <ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
+                    </a>
                 </div>
 			</motion.div>
 			<motion.div
 				variants={variantsSecond}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
+				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
 				 <Image
 					src={MisskeyLogo}
 					alt="logo"
@@ -67,22 +71,28 @@ const MyContributions = () => {
 					width="100"
 					className="h-6 w-6 flex-shrink-0 transform scale-[1.1]"
 				/>
-				<div className="w-full h-4 inline-flex items-center">
-                    <span className="font-medium text-neutral-600 text-sm pt-.5">Misskey</span>
+				<div className="w-full h-4 inline-flex items-center justify-between">
+                    <span className="font-semibold text-neutral-100 text-sm pt-.5">Misskey</span>
+                    <a href="https://misskey-hub.net/" target="_blank">
+                        <ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
+                    </a>
                 </div>
 			</motion.div>
 			<motion.div
 				variants={variants}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black">
+				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 bg-white dark:bg-black">
 				<Image
-					src={FaviconPng}
+					src={DenoLogo}
 					alt="logo"
 					height="100"
 					width="100"
 					className="h-6 w-6 flex-shrink-0 transform scale-[1.1]"
 				/>
-				<div className="w-full h-4 inline-flex items-center">
-                    <span className="font-medium text-neutral-600 text-sm pt-.5">My projects</span>
+				<div className="w-full h-4 inline-flex items-center justify-between">
+                    <span className="font-semibold text-neutral-100 text-sm pt-.5">My projects</span>
+                     <a href="https://github.com/EdamAme-x?tab=repositories" target="_blank">
+                        <ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
+                    </a>
                 </div>
 			</motion.div>
 		</motion.div>
@@ -326,7 +336,7 @@ export const Items = [
 		),
 		header: <MyContributions />,
 		className: "md:col-span-1",
-		icon: <></>
+		icon: <GitPullRequestCreateArrowIcon width={18} height={18} />
 	},
 	{
 		title: "Automated Proofreading",
