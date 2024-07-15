@@ -25,7 +25,7 @@ export function Hero() {
 				minSize={0.9}
 				maxSize={1.8}
 				particleDensity={10}
-				className="absolute top-0 z-[-1] w-full h-[1000vh]"
+				className="absolute top-0 z-[-1] w-full h-[300vh]"
 				particleColor={["#F78DA7", "#189BED"]}
 			/>
 			<div
