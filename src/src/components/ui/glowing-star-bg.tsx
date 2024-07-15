@@ -62,10 +62,12 @@ export const GlowingStarsTitle = ({
 };
 
 const createWave = () => {
-	let currentFrame = [1, 20, 39, 58, 77, 96, 78, 61, 44, 27, 10, 29, 48, 67, 86, 105, 89, 72];
+	let currentFrame = [
+		1, 20, 39, 58, 77, 96, 78, 61, 44, 27, 10, 29, 48, 67, 86, 105, 89, 72
+	];
 
 	const next = () => {
-		const nextFrame = currentFrame.map((i) => {
+		const nextFrame = currentFrame.map(i => {
 			const baseIndex = Math.floor(i / 18) * 18;
 			return baseIndex + (((i % 18) + 1) % 18);
 		});
@@ -73,8 +75,8 @@ const createWave = () => {
 		return nextFrame;
 	};
 
-	return next
-}
+	return next;
+};
 
 export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
 	const stars = 108;

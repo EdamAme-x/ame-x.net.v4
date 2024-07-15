@@ -7,7 +7,7 @@ interface Props {
 export function Layout({ children }: Props) {
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			{children}
 		</>
 	);

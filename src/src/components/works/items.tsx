@@ -1,7 +1,22 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { AudioLinesIcon, AwardIcon, BriefcaseBusinessIcon, ExternalLink, FolderIcon, GitPullRequestCreateArrowIcon, HammerIcon, MessageCircleQuestionIcon, PanelsTopLeftIcon, RouterIcon, UserPlusIcon, UsersIcon } from "lucide-react";
+import {
+	AudioLinesIcon,
+	AwardIcon,
+	BriefcaseBusinessIcon,
+	ExternalLink,
+	FolderIcon,
+	GitPullRequestCreateArrowIcon,
+	HammerIcon,
+	MapPinnedIcon,
+	MessageCircleQuestionIcon,
+	PanelsTopLeftIcon,
+	PinIcon,
+	RouterIcon,
+	UserPlusIcon,
+	UsersIcon
+} from "lucide-react";
 import DenoLogo from "@/assets/svg/deno.svg";
 import GoLogo from "@/assets/svg/go.svg";
 import HonoLogo from "@/assets/svg/hono.svg";
@@ -10,12 +25,11 @@ import TypeScriptLogo from "@/assets/svg/typescript.svg";
 import { SNS } from "../hero/sns";
 import { GlowingStarsBackgroundCard } from "../ui/glowing-star-bg";
 
-
 const MyContributions = () => {
 	const variants = {
 		initial: {
 			x: 10,
-            rotate: 5
+			rotate: 5
 		},
 		animate: {
 			x: 0,
@@ -28,7 +42,7 @@ const MyContributions = () => {
 	const variantsSecond = {
 		initial: {
 			x: -10,
-            rotate: -5
+			rotate: -5
 		},
 		animate: {
 			x: 0,
@@ -47,7 +61,7 @@ const MyContributions = () => {
 			<motion.div
 				variants={variants}
 				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 bg-white dark:bg-black">
-                <Image
+				<Image
 					src={HonoLogo}
 					alt="logo"
 					height="100"
@@ -55,16 +69,18 @@ const MyContributions = () => {
 					className="h-6 w-6 flex-shrink-0 transform scale-[1.1]"
 				/>
 				<div className="w-full h-4 inline-flex items-center justify-between">
-                    <span className="font-semibold text-neutral-100 text-sm pt-.5 mx-auto sm:mx-none">Hono.js</span>
-                    <a href="https://hono.dev/" target="_blank">
-                        <ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
-                    </a>
-                </div>
+					<span className="font-semibold text-neutral-100 text-sm pt-.5 mx-auto sm:mx-0">
+						Hono.js
+					</span>
+					<a href="https://hono.dev/" target="_blank">
+						<ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
+					</a>
+				</div>
 			</motion.div>
 			<motion.div
 				variants={variantsSecond}
 				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
-				 <Image
+				<Image
 					src={MisskeyLogo}
 					alt="logo"
 					height="100"
@@ -72,11 +88,13 @@ const MyContributions = () => {
 					className="h-6 w-6 flex-shrink-0 transform scale-[1.1]"
 				/>
 				<div className="w-full h-4 inline-flex items-center justify-between">
-                    <span className="font-semibold text-neutral-100 text-sm pt-.5 mx-auto sm:mx-none">Misskey</span>
-                    <a href="https://misskey-hub.net/" target="_blank">
-                        <ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
-                    </a>
-                </div>
+					<span className="font-semibold text-neutral-100 text-sm pt-.5 mx-auto sm:mx-0">
+						Misskey
+					</span>
+					<a href="https://misskey-hub.net/" target="_blank">
+						<ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
+					</a>
+				</div>
 			</motion.div>
 			<motion.div
 				variants={variants}
@@ -89,63 +107,93 @@ const MyContributions = () => {
 					className="h-6 w-6 flex-shrink-0 transform scale-[1.1]"
 				/>
 				<div className="w-full h-4 inline-flex items-center justify-between">
-                    <span className="font-semibold text-neutral-100 text-sm pt-.5 mx-auto sm:mx-none">My projects</span>
-                     <a href="https://github.com/EdamAme-x?tab=repositories" target="_blank">
-                        <ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
-                    </a>
-                </div>
+					<span className="font-semibold text-neutral-100 text-sm pt-.5 mx-auto sm:mx-0">
+						My projects
+					</span>
+					<a
+						href="https://github.com/EdamAme-x?tab=repositories"
+						target="_blank">
+						<ExternalLink className="h-4 w-4 mr-2 text-neutral-400" />
+					</a>
+				</div>
 			</motion.div>
 		</motion.div>
 	);
 };
 const MyAchievement = () => {
-    const first = {
-        initial: {
-            rotate: -5
-        },
-        hover: {
-            rotate: 0
-        }
-    }
+	const first = {
+		initial: {
+			rotate: -5
+		},
+		hover: {
+			rotate: 0
+		}
+	};
 
-    const second = {
-        initial: {
-            rotate: 5
-        },
-        hover: {
-            rotate: 0
-        }
-    }
+	const second = {
+		initial: {
+			rotate: 5
+		},
+		hover: {
+			rotate: 0
+		}
+	};
 
 	return (
 		<motion.div
-            initial="initial"
+			initial="initial"
 			whileHover="hover"
 			className="flex flex-col w-full h-full dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 px-3">
-            <motion.div variants={first} className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
-                <div className="flex justify-between">
-                    <span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2"><UsersIcon className="h-4 w-4 text-emerald-500" /> Users of my service</span>
-                    <div className="flex gap-x-1">
-                        <HammerIcon width={12} height={12} className="text-white" />
-                        <PanelsTopLeftIcon width={12} height={12} className="text-white" />
-                        <RouterIcon width={12} height={12} className="text-white" />
-                    </div>
-                </div>
-                <div className="border border-neutral-100/25 h-full w-full rounded-md flex justify-center sm:justify-start p-3">
-                    <span className="font-semibold text-neutral-100 text-md">5000+</span>
-                </div>
-            </motion.div>
-             <motion.div variants={second} className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
-                <div className="flex justify-between">
-                    <span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2"><UserPlusIcon className="h-4 w-4 text-cyan-500" /> My followers</span>
-                <div className="flex gap-x-1">
-                    <SNS size={12} />
-                </div>
-                </div>
-                <div className="border border-neutral-100/25 h-full w-full rounded-md flex justify-center sm:justify-start p-3">
-                    <span className="font-semibold text-neutral-100 text-md">2000+</span>
-                </div>
-            </motion.div>
+			<motion.div
+				variants={first}
+				className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
+				<div className="flex justify-between">
+					<span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2">
+						<UsersIcon className="h-4 w-4 text-emerald-500" /> Users
+						of my service
+					</span>
+					<div className="flex gap-x-1">
+						<HammerIcon
+							width={12}
+							height={12}
+							className="text-white"
+						/>
+						<PanelsTopLeftIcon
+							width={12}
+							height={12}
+							className="text-white"
+						/>
+						<RouterIcon
+							width={12}
+							height={12}
+							className="text-white"
+						/>
+					</div>
+				</div>
+				<div className="border border-neutral-100/25 h-full w-full rounded-md flex justify-center sm:justify-start p-3">
+					<span className="font-semibold text-neutral-100 text-md">
+						5000+
+					</span>
+				</div>
+			</motion.div>
+			<motion.div
+				variants={second}
+				className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
+				<div className="flex justify-between">
+					<span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2">
+						<UserPlusIcon className="h-4 w-4 text-cyan-500" /> My
+						followers
+					</span>
+					<div className="flex gap-x-1">
+						<SNS size={12} />
+					</div>
+				</div>
+				<div className="border border-neutral-100/25 h-full w-full rounded-md flex justify-center sm:justify-start p-3">
+					<span className="font-semibold text-neutral-100 text-md">
+						2000+
+					</span>
+				</div>
+			</motion.div>
 		</motion.div>
 	);
 };
@@ -157,26 +205,26 @@ const ListeningMusic = () => {
 const MyTechs = () => {
 	const first = {
 		initial: {
-            y: 5,
-            x: 20,
-            rotate: -20
+			y: 5,
+			x: 20,
+			rotate: -20
 		},
 		hover: {
-            y: 0,
-            x: 0,
-            rotate: 0
+			y: 0,
+			x: 0,
+			rotate: 0
 		}
 	};
 	const second = {
 		initial: {
 			y: 5,
-            x: -20,
-            rotate: 20
+			x: -20,
+			rotate: 20
 		},
 		hover: {
 			y: 0,
-            x: 0,
-            rotate: 0
+			x: 0,
+			rotate: 0
 		}
 	};
 
@@ -187,7 +235,7 @@ const MyTechs = () => {
 			whileHover="hover"
 			className="relative z-[0] flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2">
 			<motion.div
-                variants={first}
+				variants={first}
 				className={clsx(
 					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
 					"dark:border-white/20 border flex flex-col items-center justify-center"
@@ -226,7 +274,7 @@ const MyTechs = () => {
 				</p>
 			</motion.div>
 			<motion.div
-            variants={second}
+				variants={second}
 				className={clsx(
 					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
 					"dark:border-white/20 border flex flex-col items-center justify-center"
@@ -248,7 +296,6 @@ const MyTechs = () => {
 		</motion.div>
 	);
 };
-
 
 const Questions = () => {
 	const variants = {
@@ -276,7 +323,7 @@ const Questions = () => {
 		}
 	};
 
-    const messages = [
+	const messages = [
 		"Hello, Amex.\nAre you accepting a job and a request?",
 		"Sure, I am always accepting it.",
 		"Where should I contact you from?",
@@ -304,40 +351,49 @@ const Questions = () => {
 			initial="initial"
 			whileHover="animate"
 			className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
-            {
-                messages.map((message, i) => (
-                message !== "" &&
-                    (i % 2 === 1
-                        ? <motion.div
-                            key={i}
-                            variants={variants}
-                            className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
-                            <Image
-                                src={DenoLogo}
-                                alt="avatar"
-                                height="100"
-                                width="100"
-                                className="rounded-full h-6 w-6"
-                            />
-                            <p className={clsx("text-xs text-neutral-300", messages.length > 20 && "text-[0.6rem]")}>
-                                {message}
-                            </p>
-                        </motion.div>
-                        : <motion.div
-                            key={i}
-                            variants={variantsSecond}
-                            className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2 pl-3 items-center justify-end space-x-2 max-w-[95%] ml-auto bg-white dark:bg-black">
-                            <p className="text-xs text-neutral-500">
-                                {message}
-                            </p>
-                            <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-emerald-500 flex-shrink-0 transform rotate-45" />
-                        </motion.div>
-                    )
-                ))
-            }
-            <div className="h-6 w-2/5 ml-auto border border-white/[0.2] rounded-2xl flex items-center justify-center">
-                <a href="https://twitter.com/amex2189" target="_blank" className="text-xs text-neutral-200">Hear more.</a>
-            </div>
+			{messages.map(
+				(message, i) =>
+					message !== "" &&
+					(i % 2 === 1 ? (
+						<motion.div
+							key={i}
+							variants={variants}
+							className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
+							<Image
+								src={DenoLogo}
+								alt="avatar"
+								height="100"
+								width="100"
+								className="rounded-full h-6 w-6"
+							/>
+							<p
+								className={clsx(
+									"text-xs text-neutral-300",
+									messages.length > 20 && "text-[0.6rem]"
+								)}>
+								{message}
+							</p>
+						</motion.div>
+					) : (
+						<motion.div
+							key={i}
+							variants={variantsSecond}
+							className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2 pl-3 items-center justify-end space-x-2 max-w-[95%] ml-auto bg-white dark:bg-black">
+							<p className="text-xs text-neutral-500">
+								{message}
+							</p>
+							<div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-emerald-500 flex-shrink-0 transform rotate-45" />
+						</motion.div>
+					))
+			)}
+			<div className="h-6 w-2/5 ml-auto border border-white/[0.2] rounded-2xl flex items-center justify-center">
+				<a
+					href="https://twitter.com/amex2189"
+					target="_blank"
+					className="text-xs text-neutral-200">
+					Hear more.
+				</a>
+			</div>
 		</motion.div>
 	);
 };
@@ -351,19 +407,32 @@ export function AboutMe() {
 					"bg-[url(https://images.unsplash.com/photo-1498036882173-b41c28a8ba34?q=100&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover"
 				)}>
 				<div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black bg-black/[0.3] opacity-60"></div>
-				<div className="flex flex-row items-center space-x-4 z-10">
-					<Image
-						height="100"
-						width="100"
-						alt="Avatar"
-						src="/favicon.png"
-						className="h-10 w-10 rounded-full object-cover"
-					/>
-					<div className="flex flex-col">
-						<p className="font-normal text-base text-gray-50 relative z-10">
-							Ame_x
-						</p>
-						<a href="https://twitter.com/amex2189" target="_blank" className="text-sm text-gray-400">@amex2189</a>
+				<div className="flex flex-row justify-between items-center space-x-4 z-10">
+					<div className="flex justify-center items-center gap-x-1">
+						<Image
+							height="100"
+							width="100"
+							alt="Avatar"
+							src={DenoLogo}
+							className="h-10 w-10 rounded-full object-cover"
+						/>
+						<div className="flex flex-col">
+							<p className="font-normal text-base text-gray-50 relative z-10">
+								Ame_x
+							</p>
+							<a
+								href="https://twitter.com/amex2189"
+								target="_blank"
+								className="text-sm text-gray-400">
+								@amex2189
+							</a>
+						</div>
+					</div>
+					<div className="ml-auto pr-2 flex items-center gap-x-2">
+						<MapPinnedIcon width={18} height={18} />
+						<span className="text-sm text-gray-50 font-raleway">
+							Tokyo
+						</span>
 					</div>
 				</div>
 				<div className="text content">
@@ -371,8 +440,8 @@ export function AboutMe() {
 						My Profile
 					</h1>
 					<p className="font-normal text-sm text-gray-50 relative z-10 my-4">
-						I am 14 years and a middle student in Japan now. <br />
-                        I like to build funny and interesting things.
+						I am 14 years and a middle student in Japan now. <br />I
+						like to build funny and interesting things.
 					</p>
 				</div>
 			</div>
@@ -445,6 +514,6 @@ export const Items = [
 		icon: <MessageCircleQuestionIcon width={18} height={18} />
 	},
 	{
-		raw: <AboutMe />,
-	},
+		raw: <AboutMe />
+	}
 ];

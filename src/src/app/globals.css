@@ -36,7 +36,6 @@
     @apply border-border;
   }
   body {
-    will-change: transform;
     scrollbar-width: 0px;
     @apply bg-[#010101] text-foreground;
   }
@@ -95,4 +94,8 @@
   to {
     filter: hue-rotate(-360deg);
   }
+}
+
+.use-transform {
+  will-change: transform;
 }
