@@ -46,14 +46,14 @@ export function Hero() {
 							)}>
 							<span
 								className={clsx(
-									"text-4xl",
+									"text-xl sm:text-3xl md:text-4xl",
 									"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50"
 								)}>
 								Welcome to
 							</span>{" "}
 							<span
 								className={clsx(
-									"text-8xl text-akin-bold",
+									"text-5xl sm:text-7xl md:text-8xl text-akin-bold",
 									"text-gradient"
 								)}>
 								AMEX NET.

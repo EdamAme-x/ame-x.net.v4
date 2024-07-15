@@ -2,7 +2,7 @@ import { FlipWords } from "../ui/flip-word";
 
 export function Whoami() {
 	return (
-		<div className="text-3xl font-medium text-gray-400 ml-[20%] mt-2">
+		<div className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-400 ml-[5%] sm:ml-[10%] md:ml-[20%] mt-2">
 			<span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
 				I&apos;m{" "}
 			</span>
