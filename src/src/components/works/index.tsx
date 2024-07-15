@@ -26,6 +26,7 @@ export function AboutMe() {
 					header={item.header}
 					className={cn("[&>p:text-lg]", item.className)}
 					icon={item.icon}
+          raw={item.raw}
 				/>
 			))}
 		</BentoGrid>
