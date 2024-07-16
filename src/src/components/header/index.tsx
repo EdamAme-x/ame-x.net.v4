@@ -4,7 +4,12 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
-import { BookAIcon, GalleryVerticalIcon, MenuIcon, UserRoundIcon } from "lucide-react";
+import {
+	BookAIcon,
+	GalleryVerticalIcon,
+	MenuIcon,
+	UserRoundIcon
+} from "lucide-react";
 import {
 	Sheet,
 	SheetContent,
@@ -91,7 +96,11 @@ export function Header() {
 											"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
 											"inline-flex items-center gap-2"
 										)}>
-										<UserRoundIcon width={16} height={16} className="text-white" />
+										<UserRoundIcon
+											width={16}
+											height={16}
+											className="text-white"
+										/>
 										Profile
 									</span>
 								</Link>
@@ -102,7 +111,11 @@ export function Header() {
 											"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
 											"inline-flex items-center gap-2"
 										)}>
-										<BookAIcon width={16} height={16} className="text-white" />
+										<BookAIcon
+											width={16}
+											height={16}
+											className="text-white"
+										/>
 										Blog
 									</span>
 								</Link>
@@ -113,7 +126,11 @@ export function Header() {
 											"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
 											"inline-flex items-center gap-2"
 										)}>
-										<GalleryVerticalIcon width={16} height={16} className="text-white" />
+										<GalleryVerticalIcon
+											width={16}
+											height={16}
+											className="text-white"
+										/>
 										Gallery
 									</span>
 								</Link>

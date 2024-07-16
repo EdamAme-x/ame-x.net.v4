@@ -4,6 +4,7 @@ import { Wave2SVG, WaveSVG } from "../header/svg";
 import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
+import { CodePanel } from "./codePanel";
 import { Whoami } from "./whoami";
 
 export function Hero() {
@@ -33,7 +34,7 @@ export function Hero() {
 					"absolute",
 					"top-0 left-1/2 right-0 bottom-0",
 					"transform -translate-x-1/2",
-					"z-10",
+					"z-[11] pointer-events-none",
 					"flex justify-center items-center",
 					"w-screen h-screen"
 				)}>
@@ -62,7 +63,7 @@ export function Hero() {
 						<Whoami />
 						<a
 							href="#works"
-							className="mt-7 flex items-center justify-center">
+							className="mt-7 flex items-center justify-center pointer-events-auto">
 							<HoverBorderGradient className="px-7 inline-flex items-center gap-2">
 								<BriefcaseBusiness width={16} height={16} />{" "}
 								<span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-100">
@@ -73,6 +74,7 @@ export function Hero() {
 					</div>
 				</div>
 			</div>
+			<CodePanel />
 		</div>
 	);
 }

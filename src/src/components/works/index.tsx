@@ -17,7 +17,7 @@ export function Works() {
 
 export function AboutMe() {
 	return (
-		<BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] use-transform">
+		<BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] use-transform relative z-[20]">
 			{Items.map((item, i) => (
 				<BentoGridItem
 					key={i}
