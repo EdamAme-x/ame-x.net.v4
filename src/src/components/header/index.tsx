@@ -1,6 +1,5 @@
 "use client";
 
-import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
@@ -15,14 +14,14 @@ import {
 	SheetContent,
 	SheetDescription,
 	SheetHeader,
-	SheetTitle,
 	SheetTrigger
 } from "@/components/ui/sheet";
 import IconImage from "@/assets/favicon.png";
 import { SNS } from "../hero/sns";
-import { Button } from "../ui/button";
-import { GlassedButton } from "../ui/glassed-button";
-import { Separator } from "../ui/separator";
+
+// Temporary
+const blogUrl = "https://zenn.dev/ame_x";
+const galleryUrl = "https://github.com/EdamAme-x?tab=repositories";
 
 export function Header() {
 	return (
@@ -53,7 +52,7 @@ export function Header() {
 						Profile
 					</span>
 				</Link>
-				<Link href="/blog">
+				<Link href={blogUrl}>
 					<span
 						className={clsx(
 							"font-semibold text-neutral-100 text-md",
@@ -62,7 +61,7 @@ export function Header() {
 						Blog
 					</span>
 				</Link>
-				<Link href="/gallery">
+				<Link href={galleryUrl}>
 					<span
 						className={clsx(
 							"font-semibold text-neutral-100 text-md",
@@ -104,7 +103,7 @@ export function Header() {
 										Profile
 									</span>
 								</Link>
-								<Link href="/blog">
+								<Link href={blogUrl}>
 									<span
 										className={clsx(
 											"font-semibold text-neutral-100 text-md",
@@ -119,7 +118,7 @@ export function Header() {
 										Blog
 									</span>
 								</Link>
-								<Link href="/gallery">
+								<Link href={galleryUrl}>
 									<span
 										className={clsx(
 											"font-semibold text-neutral-100 text-md",
