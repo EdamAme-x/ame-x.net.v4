@@ -74,7 +74,7 @@ export function Hero() {
 					</div>
 				</div>
 			</div>
-			<CodePanel />
+			{/* DEV <CodePanel /> */}
 		</div>
 	);
 }
