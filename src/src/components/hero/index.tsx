@@ -42,7 +42,7 @@ export function Hero() {
 					<div className="flex flex-col mb-1">
 						<h1
 							className={clsx(
-								"font-bold font-raleway",
+								"font-bold",
 								"inline-flex flex-col"
 							)}>
 							<span
@@ -54,7 +54,7 @@ export function Hero() {
 							</span>{" "}
 							<span
 								className={clsx(
-									"text-5xl sm:text-7xl md:text-8xl text-akin-bold",
+									"text-5xl sm:text-7xl md:text-8xl",
 									"text-gradient"
 								)}>
 								AMEX NET.
