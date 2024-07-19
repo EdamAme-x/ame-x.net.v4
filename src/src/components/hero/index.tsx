@@ -6,6 +6,7 @@ import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
 import { Whoami } from "./whoami";
 import { Background } from "./background";
+import { ElectricPulse } from "../ui/electric-pulse";
 
 export function Hero() {
 	return (
@@ -16,7 +17,8 @@ export function Hero() {
 			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs sm:hidden">
 				<Wave2SVG />
 			</div>
-			<Background className="opacity-[0.99] hidden sm:block" />
+			{/* <Background className="opacity-[0.97] filter blur-[0.1px] hidden sm:block relative z-[-2]" /> */}
+			<ElectricPulse />
 			<Spotlight
 				fill="#852A01bb"
 				className="top-20 h-screen opacity-50 transform rotate-90"
@@ -75,7 +77,6 @@ export function Hero() {
 					</div>
 				</div>
 			</div>
-			{/* DEV <CodePanel /> */}
 		</div>
 	);
 }
