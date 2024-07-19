@@ -9,7 +9,7 @@ import { Background } from "./background";
 
 export function Hero() {
 	return (
-		<div className={clsx("pt-14", "h-[85vh]")}>
+		<div className={clsx("pt-14", "h-[85vh]", "user-select-none")}>
 			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs sm:hidden">
 				<WaveSVG />
 			</div>
@@ -18,7 +18,7 @@ export function Hero() {
 			</div>
 			<Background className="opacity-[0.99] hidden sm:block" />
 			<Spotlight
-				fill="#189bed77"
+				fill="#852A01bb"
 				className="top-20 h-screen opacity-50 transform rotate-90"
 			/>
 			<Sparkles

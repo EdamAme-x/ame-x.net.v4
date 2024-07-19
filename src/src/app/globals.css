@@ -33,6 +33,11 @@
 @layer base {
   * {
     scroll-behavior: smooth;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
     @apply border-border;
   }
   body {

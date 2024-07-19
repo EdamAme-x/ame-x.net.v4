@@ -199,7 +199,7 @@ const MyAchievement = () => {
 };
 const ListeningMusic = () => {
 	return (
-		<GlowingStarsBackgroundCard className="bg-transparent border-none h-0 hidden md:block" />
+		<GlowingStarsBackgroundCard className="bg-transparent border-none h-full" />
 	);
 };
 const MyTechs = () => {
