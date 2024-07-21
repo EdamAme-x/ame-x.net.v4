@@ -22,7 +22,7 @@ export const GlowingStarsBackgroundCard = ({
 				setMouseEnter(false);
 			}}
 			className={cn(
-				"px-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600",
+				"px-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-neutral",
 				className
 			)}>
 			<div className="flex justify-center items-center">

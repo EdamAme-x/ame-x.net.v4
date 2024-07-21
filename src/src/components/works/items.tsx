@@ -143,13 +143,13 @@ const MyAchievement = () => {
 		<motion.div
 			initial="initial"
 			whileHover="hover"
-			className="flex flex-col w-full h-full dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 px-3">
+			className="flex flex-col w-full h-full bg-dot-white/[0.2] flex-col space-y-2 px-3">
 			<motion.div
 				variants={first}
 				className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
 				<div className="flex justify-between">
 					<span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2">
-						<UsersIcon className="h-4 w-4 text-slate-300" /> Users
+						<UsersIcon className="h-4 w-4" /> Users
 						of my service
 					</span>
 					<div className="flex gap-x-1">
