@@ -149,7 +149,7 @@ const MyAchievement = () => {
 				className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
 				<div className="flex justify-between">
 					<span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2">
-						<UsersIcon className="h-4 w-4 text-emerald-500" /> Users
+						<UsersIcon className="h-4 w-4 text-slate-300" /> Users
 						of my service
 					</span>
 					<div className="flex gap-x-1">
@@ -181,7 +181,7 @@ const MyAchievement = () => {
 				className="bg-black border border-neutral-100/25 h-auto w-full rounded-lg flex flex-col gap-2 p-2">
 				<div className="flex justify-between">
 					<span className="font-semibold text-neutral-100 text-xs inline-flex gap-x-2">
-						<UserPlusIcon className="h-4 w-4 text-cyan-500" /> My
+						<UserPlusIcon className="h-4 w-4 text-slate-300" /> My
 						followers
 					</span>
 					<div className="flex gap-x-1">

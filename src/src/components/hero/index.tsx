@@ -1,20 +1,21 @@
+import Image from "next/image";
 import clsx from "clsx";
 import { BriefcaseBusiness } from "lucide-react";
-import { Wave2SVG, WaveSVG } from "../header/svg";
+import BgImage from "@/assets/background.jpg";
+import CliffImage from "@/assets/cliff.png";
+import TreeImage from "@/assets/trees.webp";
 import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
 import { Whoami } from "./whoami";
 
+
 export function Hero() {
 	return (
 		<div className={clsx("pt-14", "h-[85vh]", "user-select-none")}>
-			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
-				<WaveSVG />
-			</div>
-			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
-				<Wave2SVG />
-			</div>
+			<Image src={BgImage} height={484} className="absolute top-0 left-0 w-full" alt="lake" />
+			<Image src={TreeImage} height={484} className="absolute top-0 left-0 w-full" alt="tree" />
+			<Image src={CliffImage} height={726} className="absolute top-0 right-0 hidden sm:block" alt="cliff" />
 			<Spotlight
 				fill="#852A01"
 				className="top-20 h-screen opacity-50 transform rotate-90"
@@ -31,13 +32,13 @@ export function Hero() {
 			<div
 				className={clsx(
 					"absolute",
-					"top-0 left-1/2 right-0 bottom-0",
-					"transform -translate-x-1/2",
+					"top-0 left-1/2 right-0 bottom-0 md:left-1/4",
+					"transform -translate-x-1/2 md:-translate-x-1/4",
 					"z-[11] pointer-events-none",
 					"flex justify-center items-center",
-					"w-screen h-screen"
+					"w-screen h-screen sm:h-[70vh] md:h-screen sm:w-1/2"
 				)}>
-				<div className="w-screen flex flex-col justify-center items-center">
+				<div className="w-full flex flex-col justify-center items-center">
 					<div className="flex flex-col mb-1">
 						<h1
 							className={clsx(
@@ -53,10 +54,10 @@ export function Hero() {
 							</span>{" "}
 							<span
 								className={clsx(
-									"text-5xl sm:text-7xl md:text-8xl",
+									"text-5xl sm:text-6xl md:text-7xl lg:text-8xl",
 									"text-gradient"
 								)}>
-								AMEX NET.
+								AMEX NET
 							</span>
 						</h1>
 						<Whoami />
