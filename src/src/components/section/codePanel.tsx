@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import "./codePanel.css";
 
-
 export function CodePanel() {
 	const variants = {
 		initial: {
@@ -18,17 +17,17 @@ export function CodePanel() {
 	return (
 		<>
 			<motion.div
-				variants={variants}
-				initial="initial"
-				whileHover="hover"
+				// variants={variants}
+				// initial="initial"
+				// whileHover="hover"
 				className={clsx(
 					"absolute",
-					"top-2/3 left-10",
+					"top-[70%] left-10",
 					"z-[10]",
 					"hidden md:flex",
 					"justify-center items-center",
-					"p-3",
-					"backdrop-blur-sm",
+					"p-4",
+					"backdrop-blur-sm bg-white/[0.01]",
 					"border border-white/[0.2]",
 					"rounded-lg shadow-md"
 				)}>
@@ -36,7 +35,7 @@ export function CodePanel() {
 					{HonoCode}
 				</div>
 			</motion.div>
-			<motion.div
+			{/* <motion.div
 				variants={variants}
 				initial="initial"
 				whileHover="hover"
@@ -54,7 +53,7 @@ export function CodePanel() {
 				<div className="w-full h-full flex flex-col justify-center items-center">
 					{GopherCode}
 				</div>
-			</motion.div>
+			</motion.div> */}
 		</>
 	);
 }
@@ -119,8 +118,7 @@ const GopherCode = (
 			g.Attribute)
 			<br />
 			{"}"}
-			<br />
-			g := &amp;Gopher{"{"} Attribute:{" "}
+			<br />g := &amp;Gopher{"{"} Attribute:{" "}
 			<span className="hljs-string">{'"so cute"'}</span> {"}"}
 			<br />
 			g.say()

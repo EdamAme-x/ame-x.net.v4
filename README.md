@@ -5,3 +5,5 @@ Develop now
 Next.js x TailwindCSS x Shadcn-ui x framer-motion
 
 コードを使用するならライセンスは必ず書いてね。
+
+This code is so dirty for now.

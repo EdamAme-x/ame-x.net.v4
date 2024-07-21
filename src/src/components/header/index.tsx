@@ -17,7 +17,7 @@ import {
 	SheetTrigger
 } from "@/components/ui/sheet";
 import IconImage from "@/assets/favicon.png";
-import { SNS } from "../hero/sns";
+import { SNS } from "../section/sns";
 
 // Temporary
 const blogUrl = "https://zenn.dev/ame_x";

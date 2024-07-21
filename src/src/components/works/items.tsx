@@ -22,7 +22,7 @@ import GoLogo from "@/assets/svg/go.svg";
 import HonoLogo from "@/assets/svg/hono.svg";
 import MisskeyLogo from "@/assets/svg/misskey.svg";
 import TypeScriptLogo from "@/assets/svg/typescript.svg";
-import { SNS } from "../hero/sns";
+import { SNS } from "../section/sns";
 import { GlowingStarsBackgroundCard } from "../ui/glowing-star-bg";
 
 const MyContributions = () => {

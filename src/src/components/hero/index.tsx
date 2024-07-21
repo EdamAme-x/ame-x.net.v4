@@ -5,22 +5,18 @@ import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
 import { Whoami } from "./whoami";
-import { Background } from "./background";
-import { ElectricPulse } from "../ui/electric-pulse";
 
 export function Hero() {
 	return (
 		<div className={clsx("pt-14", "h-[85vh]", "user-select-none")}>
-			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs sm:hidden">
+			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
 				<WaveSVG />
 			</div>
-			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs sm:hidden">
+			<div className="absolute z-[-1] top-0 left-0 right-0 bottom-0 opacity-25 filter blur-xs">
 				<Wave2SVG />
 			</div>
-			{/* <Background className="opacity-[0.97] filter blur-[0.1px] hidden sm:block relative z-[-2]" /> */}
-			<ElectricPulse />
 			<Spotlight
-				fill="#852A01bb"
+				fill="#852A01"
 				className="top-20 h-screen opacity-50 transform rotate-90"
 			/>
 			<Sparkles
@@ -64,16 +60,16 @@ export function Hero() {
 							</span>
 						</h1>
 						<Whoami />
-						<a
-							href="#works"
-							className="mt-7 flex items-center justify-center pointer-events-auto">
-							<HoverBorderGradient className="px-7 inline-flex items-center gap-2">
-								<BriefcaseBusiness width={16} height={16} />{" "}
-								<span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-100">
-									View my works
-								</span>
-							</HoverBorderGradient>
-						</a>
+						<div className="mt-7 flex items-center justify-center pointer-events-auto">
+							<a href="#works">
+								<HoverBorderGradient className="px-7 inline-flex items-center gap-2">
+									<BriefcaseBusiness width={16} height={16} />{" "}
+									<span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-100">
+										View my works
+									</span>
+								</HoverBorderGradient>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
