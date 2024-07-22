@@ -124,10 +124,7 @@ export const SVGs = () => {
 				</filter>
 
 				<filter id="shadow2">
-					<feDropShadow
-						stdDeviation="0.75"
-						floodColor="#822700"
-					/>
+					<feDropShadow stdDeviation="0.75" floodColor="#822700" />
 				</filter>
 			</defs>
 

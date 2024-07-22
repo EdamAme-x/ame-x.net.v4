@@ -20,7 +20,7 @@ import IconImage from "@/assets/favicon.png";
 import { SNS } from "../section/sns";
 
 // Temporary
-const blogUrl = "https://zenn.dev/ame_x";
+const blogUrl = "#blog";
 const galleryUrl = "https://github.com/EdamAme-x?tab=repositories";
 
 export function Header() {

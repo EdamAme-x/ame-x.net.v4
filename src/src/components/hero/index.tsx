@@ -9,17 +9,30 @@ import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
 import { Whoami } from "./whoami";
 
-
 export function Hero() {
 	return (
 		<div className={clsx("pt-14", "h-[85vh]", "user-select-none")}>
-			<Image src={BgImage} height={484} priority className="absolute top-0 left-0 w-full" alt="lake" />
-			<Image src={TreeImage} height={484} className="absolute top-0 left-0 w-full" alt="tree" />
-			<Image src={CliffImage} height={726} priority className="absolute top-0 right-0 hidden sm:block" alt="cliff" />
-			<Spotlight
-				fill="#852A01"
-				className="top-20 h-screen opacity-50 transform rotate-90"
+			<Image
+				src={BgImage}
+				height={484}
+				priority
+				className="absolute z-[0] top-0 left-0 w-full"
+				alt="lake"
 			/>
+			<Image
+				src={TreeImage}
+				height={484}
+				className="absolute z-[0] top-0 left-0 w-full"
+				alt="tree"
+			/>
+			<Image
+				src={CliffImage}
+				height={726}
+				priority
+				className="absolute z-[3] top-0 right-0 hidden sm:block"
+				alt="cliff"
+			/>
+			<Spotlight fill="#852A01" className="top-0 h-screen" />
 			<Sparkles
 				id="tsparticlesfullpage"
 				background="transparent"

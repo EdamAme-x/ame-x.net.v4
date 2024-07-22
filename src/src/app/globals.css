@@ -42,7 +42,7 @@
   }
   body {
     scrollbar-width: 0px;
-    @apply bg-[#020010] text-foreground;
+    @apply bg-[#000000] text-foreground;
   }
   body::-webkit-scrollbar {
     display: none;
