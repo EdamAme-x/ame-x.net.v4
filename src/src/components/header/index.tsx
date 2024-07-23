@@ -19,9 +19,8 @@ import {
 import IconImage from "@/assets/favicon.png";
 import { SNS } from "../section/sns";
 
-// Temporary
 const blogUrl = "#blog";
-const galleryUrl = "https://github.com/EdamAme-x?tab=repositories";
+const galleryUrl = "#gallery";
 
 export function Header() {
 	return (

@@ -8,7 +8,6 @@ import { cache } from "@/lib/cache";
 import type { Post } from "@/backend/types";
 import { Badge } from "../ui/badge";
 
-
 export function BlogListView() {
 	return (
 		<div
@@ -30,22 +29,22 @@ function Posts() {
 
 	useEffect(() => {
 		const client = hc<rpc>(window.location.origin);
-		const getPosts = (async () => {
+		const getPosts = async () => {
 			const response = await client.api.posts.$get();
 			const data = await response.json();
 
-            if (data.message === "error") {
-                return []
-            }
+			if (data.message === "error") {
+				return [];
+			}
 
 			return data.data;
-		});
+		};
 
-        const data = postsCache(getPosts)
+		const data = postsCache(getPosts);
 
-        data.then(data => {
+		data.then(data => {
 			setPosts(data);
-        })
+		});
 	}, []);
 
 	return (
