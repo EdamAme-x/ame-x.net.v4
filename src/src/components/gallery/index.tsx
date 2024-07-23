@@ -59,7 +59,10 @@ function Repos() {
 							<div
 								className={clsx(
 									"absolute flex justify-center items-center w-[90px] h-[90px] border border-white/[0.2] filter backdrop-blur-md rounded-md"
-								)} style={{background: `linear-gradient(135deg, #${head} 0%, #${tail} 100%)`}}></div>
+								)}
+								style={{
+									background: `linear-gradient(135deg, #${head} 0%, #${tail} 100%)`
+								}}></div>
 							<a
 								href={repo.html_url}
 								target="_blank"
