@@ -50,30 +50,30 @@ function Posts() {
 
 	return (
 		<div className="flex flex-wrap justify-center md:justify-between w-full px-5 md:px-10 gap-y-5 mt-5">
-			{posts.map(post => (
+			{posts.slice(0, 12).map(post => (
 				<div
 					key={post.id}
 					className="flex flex-col border border-white/[0.2] rounded-md w-[90%] md:w-[40%] lg:w-[30%] bg-black">
-					<div className="w-full h-[150px] rounded-t-md bg-white/[0.05] border border-white/[0.2] flex justify-center items-center">
-						<div className="absolute flex justify-center items-center w-[90px] h-[90px] border border-white/[0.2] rounded-md">
+					<div className="w-full h-[150px] rounded-t-md bg-grid-white/[0.2] border border-white/[0.2] flex justify-center items-center">
+						<div className="absolute flex justify-center items-center w-[90px] h-[90px] border border-white/[0.2] filter backdrop-blur-md rounded-md">
 							<span className=" transform scale-[3.5]">
 								{post.emoji}
 							</span>
 						</div>
 						<Badge
 							variant="outline"
-							className="relative bottom-[35%] right-[35%]">
+							className="relative bottom-[35%] right-[35%] filter backdrop-blur-md">
 							{post.article_type}
 						</Badge>
 						<a
 							href={"https://zenn.dev" + post.path}
 							target="_blank"
-							className="relative bottom-[35%] left-[35%] p-2 rounded-full border bg-border/[0.1]">
+							className="relative bottom-[35%] left-[35%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
 							<ExternalLink width={16} height={16} />
 						</a>
 					</div>
 					<div className="w-full h-1/2 py-3 px-4 flex flex-col justify-between">
-						<div className="text-md">
+						<div className="text-md font-semibold">
 							{post.title.length > 40
 								? post.title.substring(0, 35) + "..."
 								: post.title}
