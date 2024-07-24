@@ -25,35 +25,52 @@ function Links() {
 				const tailColor = hash.slice(-6);
 
 				return (
-					<div
+					<LinkCard
 						key={crossLink.url}
-						className="flex flex-col border border-white/[0.2] rounded-md w-[90%] md:w-[40%] lg:w-[30%] bg-black">
-						<div className="w-full h-[150px] rounded-t-md bg-grid-white/[0.2] border border-white/[0.2] flex justify-center items-center">
-							<div
-								className="absolute flex justify-center items-center w-[90px] h-[90px] border border-white/[0.2] filter backdrop-blur-md rounded-full p-1"
-								style={{
-									background: `linear-gradient(135deg, #${headColor} 0%, #${tailColor} 100%)`
-								}}>
-								<div className="w-full h-full rounded-full bg-[#000000]" />
-							</div>
-							<a
-								href={crossLink.url}
-								target="_blank"
-								className="relative bottom-[35%] left-[35%] md:left-[40%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
-								<ExternalLink width={16} height={16} />
-							</a>
-						</div>
-						<div className="w-full h-1/2 py-3 px-4 flex flex-col justify-between">
-							<div className="text-md font-semibold line-clamp-2">
-								{crossLink.name}
-							</div>
-							<div className="text-xs font-regular text-slate-500 line-clamp-2">
-								{crossLink.description}
-							</div>
-						</div>
-					</div>
+						crossLink={crossLink}
+						headColor={headColor}
+						tailColor={tailColor}
+					/>
 				);
 			})}
+		</div>
+	);
+}
+
+function LinkCard({
+	crossLink,
+	headColor,
+	tailColor
+}: {
+	crossLink: (typeof CrossLinks)[number];
+	headColor: string;
+	tailColor: string;
+}) {
+	return (
+		<div className="flex flex-col border border-white/[0.2] rounded-md w-[90%] md:w-[40%] lg:w-[30%] bg-black">
+			<div className="w-full h-[150px] rounded-t-md bg-grid-white/[0.2] border border-white/[0.2] flex justify-center items-center">
+				<div
+					className="absolute flex justify-center items-center w-[90px] h-[90px] border border-white/[0.2] filter backdrop-blur-md rounded-full p-1"
+					style={{
+						background: `linear-gradient(135deg, #${headColor} 0%, #${tailColor} 100%)`
+					}}>
+					<div className="w-full h-full rounded-full bg-[#000000]" />
+				</div>
+				<a
+					href={crossLink.url}
+					target="_blank"
+					className="relative bottom-[35%] left-[35%] md:left-[40%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
+					<ExternalLink width={16} height={16} />
+				</a>
+			</div>
+			<div className="w-full h-1/2 py-3 px-4 flex flex-col justify-between">
+				<div className="text-md font-semibold line-clamp-2">
+					{crossLink.name}
+				</div>
+				<div className="text-xs font-regular text-slate-500 line-clamp-2">
+					{crossLink.description}
+				</div>
+			</div>
 		</div>
 	);
 }

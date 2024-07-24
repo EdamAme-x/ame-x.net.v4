@@ -57,10 +57,10 @@ const MyContributions = () => {
 		<motion.div
 			initial="initial"
 			whileHover="animate"
-			className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
+			className="flex flex-1 w-full h-full min-h-[6rem] bg-dot-white/[0.2] flex-col space-y-2">
 			<motion.div
 				variants={variants}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 bg-white dark:bg-black">
+				className="flex flex-row rounded-full border border-white/[0.2] py-2 px-3 items-center space-x-2 bg-black">
 				<Image
 					src={HonoLogo}
 					alt="logo"
@@ -79,7 +79,7 @@ const MyContributions = () => {
 			</motion.div>
 			<motion.div
 				variants={variantsSecond}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
+				className="flex flex-row rounded-full border border-white/[0.2] py-2 px-3 items-center space-x-2 w-3/4 ml-auto bg-black">
 				<Image
 					src={MisskeyLogo}
 					alt="logo"
@@ -98,7 +98,7 @@ const MyContributions = () => {
 			</motion.div>
 			<motion.div
 				variants={variants}
-				className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] py-2 px-3 items-center space-x-2 bg-white dark:bg-black">
+				className="flex flex-row rounded-full border border-white/[0.2] py-2 px-3 items-center space-x-2 bg-black">
 				<Image
 					src={DenoLogo}
 					alt="logo"
@@ -232,12 +232,12 @@ const MyTechs = () => {
 			initial="initial"
 			animate="animate"
 			whileHover="hover"
-			className="relative z-[0] flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2">
+			className="relative z-[0] flex flex-1 w-full h-full min-h-[6rem] bg-dot-black/[0.2] flex-row space-x-2">
 			<motion.div
 				variants={first}
 				className={clsx(
-					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
-					"dark:border-white/20 border flex flex-col items-center justify-center"
+					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl p-4 bg-black",
+					"border border-white/20 flex flex-col items-center justify-center"
 				)}>
 				<Image
 					src={GoLogo}
@@ -249,14 +249,14 @@ const MyTechs = () => {
 				<p className="sm:text-sm text-xs text-center font-semibold text-[inherit] mt-4">
 					Golang
 				</p>
-				<p className="border border-yellow-500 bg-yellow-100 dark:bg-yellow-900/20 text-yellow-600 text-xs rounded-full px-2 py-0.5 mt-4">
+				<p className="border border-yellow-500 bg-yellow-900/20 text-yellow-600 text-xs rounded-full px-2 py-0.5 mt-4">
 					Middle
 				</p>
 			</motion.div>
 			<motion.div
 				className={clsx(
-					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
-					"dark:border-white/20 border flex flex-col items-center justify-center"
+					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl p-4 bg-black",
+					"border border-white/20 flex flex-col items-center justify-center"
 				)}>
 				<Image
 					src={TypeScriptLogo}
@@ -268,15 +268,15 @@ const MyTechs = () => {
 				<p className="sm:text-sm text-xs text-center font-semibold text-[inherit] mt-4">
 					TypeScript
 				</p>
-				<p className="border border-blue-500 bg-blue-100 dark:bg-blue-900/20 text-blue-600 text-xs rounded-full px-2 py-0.5 mt-4">
+				<p className="border border-blue-500 bg-blue-900/20 text-blue-600 text-xs rounded-full px-2 py-0.5 mt-4">
 					Professional
 				</p>
 			</motion.div>
 			<motion.div
 				variants={second}
 				className={clsx(
-					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black",
-					"dark:border-white/20 border flex flex-col items-center justify-center"
+					"h-[97.5%] text-neutral-500 hover:text-neutral-100 transition-all duration-300 relative z-20 w-1/3 rounded-2xl p-4 bg-black",
+					"border border-white/20 flex flex-col items-center justify-center"
 				)}>
 				<Image
 					src={DenoLogo}
@@ -288,7 +288,7 @@ const MyTechs = () => {
 				<p className="sm:text-sm text-xs text-center font-semibold text-[inherit] mt-4">
 					Deno
 				</p>
-				<p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
+				<p className="border border-red-500 bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
 					Expert
 				</p>
 			</motion.div>
@@ -349,7 +349,7 @@ const Questions = () => {
 		<motion.div
 			initial="initial"
 			whileHover="animate"
-			className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
+			className="flex flex-1 w-full h-full min-h-[6rem] bg-dot-white/[0.2] flex-col space-y-2">
 			{messages.map(
 				(message, i) =>
 					message !== "" &&
@@ -357,7 +357,7 @@ const Questions = () => {
 						<motion.div
 							key={i}
 							variants={variants}
-							className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
+							className="flex flex-row items-center rounded-2xl border border-white/[0.2] p-2  items-start space-x-2 bg-black">
 							<Image
 								src={DenoLogo}
 								alt="avatar"
@@ -377,7 +377,7 @@ const Questions = () => {
 						<motion.div
 							key={i}
 							variants={variantsSecond}
-							className="flex flex-row items-center rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2 pl-3 items-center justify-end space-x-2 max-w-[95%] ml-auto bg-white dark:bg-black">
+							className="flex flex-row items-center rounded-2xl border border-white/[0.2] p-2 pl-3 items-center justify-end space-x-2 max-w-[95%] ml-auto bg-black">
 							<p className="text-xs text-neutral-500">
 								{message}
 							</p>
