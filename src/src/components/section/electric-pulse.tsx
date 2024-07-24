@@ -69,7 +69,7 @@ const pipes = [
 
 export const ElectricPulse = ({ className }: { className?: string }) => {
 	return (
-		<div className={clsx("absolute inset-0", className)}>
+		<div className={clsx("absolute inset-0 w-screen overflow-hidden", className)}>
 			<SVGs />
 		</div>
 	);
