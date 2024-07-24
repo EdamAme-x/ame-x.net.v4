@@ -331,7 +331,7 @@ const Questions = () => {
 				href="https://twitter.com/amex2189"
 				target="_blank"
 				className="text-cyan-500">
-				Here
+				My twitter
 			</a>
 			, you can find me.
 		</span>,
