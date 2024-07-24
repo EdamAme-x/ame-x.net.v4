@@ -2,7 +2,7 @@ export const CrossLinks = [
 	{
 		name: "Nakasyou",
 		description: "Nakasyou's portfolio",
-		url: "https://nakasyou.pages.dev"
+		url: "https://nakasyou.github.io/"
 	},
 	{
 		name: "Akku",
