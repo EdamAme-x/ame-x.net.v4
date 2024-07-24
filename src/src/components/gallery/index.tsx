@@ -68,7 +68,7 @@ function Repos() {
 							<a
 								href={repo.html_url}
 								target="_blank"
-								className="relative bottom-[35%] left-[40%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
+								className="relative bottom-[35%] left-[35%] md:left-[40%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
 								<ExternalLink width={16} height={16} />
 							</a>
 						</div>

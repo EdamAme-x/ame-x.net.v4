@@ -61,13 +61,13 @@ function Posts() {
 						</div>
 						<Badge
 							variant="outline"
-							className="relative bottom-[35%] right-[35%] filter backdrop-blur-md">
+							className="relative bottom-[35%] right-[30%] md:right-[35%] filter backdrop-blur-md">
 							{post.article_type}
 						</Badge>
 						<a
 							href={"https://zenn.dev" + post.path}
 							target="_blank"
-							className="relative bottom-[35%] left-[35%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
+							className="relative bottom-[35%] left-[30%] md:left-[35%] p-2 rounded-full border bg-border/[0.1] filter backdrop-blur-md">
 							<ExternalLink width={16} height={16} />
 						</a>
 					</div>
