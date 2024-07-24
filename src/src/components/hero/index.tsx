@@ -4,11 +4,11 @@ import { BriefcaseBusiness } from "lucide-react";
 import BgImage from "@/assets/background.jpg";
 import CliffImage from "@/assets/cliff.png";
 import TreeImage from "@/assets/trees.webp";
+import { ElectricPulse } from "../section/electric-pulse";
 import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
 import { Whoami } from "./whoami";
-import { ElectricPulse } from "../section/electric-pulse";
 
 export function Hero() {
 	return (

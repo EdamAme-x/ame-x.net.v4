@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import {
 	Sheet,
+	SheetClose,
 	SheetContent,
 	SheetDescription,
 	SheetHeader,
@@ -87,51 +88,57 @@ export function Header() {
 								height={32}
 							/>
 							<nav className="flex flex-col items-start gap-3">
-								<Link href="#works">
-									<span
-										className={clsx(
-											"font-semibold text-neutral-100 text-md",
-											"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
-											"inline-flex items-center gap-2"
-										)}>
-										<UserRoundIcon
-											width={16}
-											height={16}
-											className="text-white"
-										/>
-										Profile
-									</span>
-								</Link>
-								<Link href={blogUrl}>
-									<span
-										className={clsx(
-											"font-semibold text-neutral-100 text-md",
-											"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
-											"inline-flex items-center gap-2"
-										)}>
-										<BookAIcon
-											width={16}
-											height={16}
-											className="text-white"
-										/>
-										Blog
-									</span>
-								</Link>
-								<Link href={galleryUrl}>
-									<span
-										className={clsx(
-											"font-semibold text-neutral-100 text-md",
-											"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
-											"inline-flex items-center gap-2"
-										)}>
-										<GalleryVerticalIcon
-											width={16}
-											height={16}
-											className="text-white"
-										/>
-										Gallery
-									</span>
-								</Link>
+								<SheetClose asChild>
+									<Link href="#works">
+										<span
+											className={clsx(
+												"font-semibold text-neutral-100 text-md",
+												"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
+												"inline-flex items-center gap-2"
+											)}>
+											<UserRoundIcon
+												width={16}
+												height={16}
+												className="text-white"
+											/>
+											Profile
+										</span>
+									</Link>
+								</SheetClose>
+								<SheetClose asChild>
+									<Link href={blogUrl}>
+										<span
+											className={clsx(
+												"font-semibold text-neutral-100 text-md",
+												"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
+												"inline-flex items-center gap-2"
+											)}>
+											<BookAIcon
+												width={16}
+												height={16}
+												className="text-white"
+											/>
+											Blog
+										</span>
+									</Link>
+								</SheetClose>
+								<SheetClose asChild>
+									<Link href={galleryUrl}>
+										<span
+											className={clsx(
+												"font-semibold text-neutral-100 text-md",
+												"bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
+												"inline-flex items-center gap-2"
+											)}>
+											<GalleryVerticalIcon
+												width={16}
+												height={16}
+												className="text-white"
+											/>
+											Gallery
+										</span>
+									</Link>
+								</SheetClose>
 							</nav>
 							<div className="flex gap-4 justify-end items-center">
 								<SNS size={18} />

@@ -38,7 +38,7 @@ export function Footer() {
 				{!isFireworking && (
 					<div className="text-sm flex flex-col items-center font-semibold gap-y-1 mt-2">
 						<ArrowUp />
-                        <span>Click</span>
+						<span>Click</span>
 					</div>
 				)}
 			</footer>

@@ -63,8 +63,8 @@ function Repos() {
 								style={{
 									background: `linear-gradient(135deg, #${head} 0%, #${tail} 100%)`
 								}}>
-                                    <div className="w-full h-full rounded-md bg-[#000000]"></div>
-                                </div>
+								<div className="w-full h-full rounded-md bg-[#000000]"></div>
+							</div>
 							<a
 								href={repo.html_url}
 								target="_blank"
