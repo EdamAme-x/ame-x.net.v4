@@ -268,8 +268,11 @@ const MyTechs = () => {
 				<p className="sm:text-sm text-xs text-center font-semibold text-[inherit] mt-4">
 					TypeScript
 				</p>
-				<p className="border border-blue-500 bg-blue-900/20 text-blue-600 text-xs rounded-full px-2 py-0.5 mt-4">
+				<p className="border border-blue-500 bg-blue-900/20 text-blue-600 text-xs rounded-full px-2 py-0.5 mt-4 hidden md:block">
 					Professional
+				</p>
+				<p className="border border-blue-500 bg-blue-900/20 text-blue-600 text-xs rounded-full px-2 py-0.5 mt-4 block md:hidden">
+					Pro
 				</p>
 			</motion.div>
 			<motion.div
