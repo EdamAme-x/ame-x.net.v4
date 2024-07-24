@@ -8,6 +8,7 @@ import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Sparkles } from "../ui/sparkles";
 import { Spotlight } from "../ui/spotlight";
 import { Whoami } from "./whoami";
+import { ElectricPulse } from "../section/electric-pulse";
 
 export function Hero() {
 	return (
@@ -32,6 +33,7 @@ export function Hero() {
 				className="absolute z-[3] top-0 right-0 hidden md:block"
 				alt="cliff"
 			/>
+			<ElectricPulse className="absolute z-[-1] top-0 inset-0 md:hidden" />
 			<Spotlight fill="#852A01" className="top-0 h-screen" />
 			<Sparkles
 				id="tsparticlesfullpage"
@@ -49,7 +51,7 @@ export function Hero() {
 					"transform -translate-x-1/2 md:-translate-x-1/4",
 					"z-[11] pointer-events-none",
 					"flex justify-center items-center",
-					"w-screen h-screen sm:h-[70vh] md:h-screen sm:w-1/2"
+					"w-screen h-screen sm:w-1/2"
 				)}>
 				<div className="w-full flex flex-col justify-center items-center">
 					<div className="flex flex-col mb-1">

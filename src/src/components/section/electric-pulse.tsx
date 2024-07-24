@@ -164,7 +164,7 @@ export const SVGs = () => {
 				fill="#ffffff"
 			/>
 
-			<path
+			{/* <path
 				transform="translate(212,377)"
 				d="M6 0C7 3 9 3 10 0 16 3 16 6 16 9L0 9C0 6 0 3 6 0"
 				fill="#153347ef"
@@ -186,7 +186,7 @@ export const SVGs = () => {
 				transform="translate(292,376) rotate(90 0 0)"
 				d="M4 3 9 3C10 3 10 4 9 4L4 4C3 4 3 3 4 3M4 7 9 7C10 7 10 6 9 6L4 6C3 6 3 7 4 7"
 				fill="#ffffff"
-			/>
+			/> */}
 		</svg>
 	);
 };
