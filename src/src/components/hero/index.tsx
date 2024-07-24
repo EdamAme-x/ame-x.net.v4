@@ -16,20 +16,20 @@ export function Hero() {
 				src={BgImage}
 				height={484}
 				priority
-				className="absolute z-[0] top-0 left-0 w-full"
+				className="absolute z-[0] top-0 left-0 w-full hidden md:block"
 				alt="lake"
 			/>
 			<Image
 				src={TreeImage}
 				height={484}
-				className="absolute z-[0] top-0 left-0 w-full"
+				className="absolute z-[0] top-0 left-0 w-full hidden md:block"
 				alt="tree"
 			/>
 			<Image
 				src={CliffImage}
 				height={726}
 				priority
-				className="absolute z-[3] top-0 right-0 hidden sm:block"
+				className="absolute z-[3] top-0 right-0 hidden md:block"
 				alt="cliff"
 			/>
 			<Spotlight fill="#852A01" className="top-0 h-screen" />
