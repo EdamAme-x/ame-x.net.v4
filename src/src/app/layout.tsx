@@ -6,7 +6,7 @@ const inter = Inter({
 	display: "swap"
 });
 
-export { metadata } from "@/consts/metadata";
+export { MetaData as metadata } from "@/consts/metadata";
 
 export default function RootLayout({
 	children

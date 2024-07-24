@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { sha256 } from "js-sha256";
 import { ExternalLink, GalleryVerticalIcon, StarIcon } from "lucide-react";
 import { cache } from "@/lib/cache";
-import { Badge } from "../ui/badge";
 
 const reposCache = cache<Repo[]>("repos", 12 * 60 * 60 * 1000);
 

@@ -5,7 +5,7 @@ const icon = "favicon.png";
 const siteName = "Amex Net";
 const description = `Who am I? I'm a Web Developer, FullStack Developer & OSS Developer, or @amex2189. I have experience in building web applications & useful tool XD`;
 
-export const metadata: Metadata = {
+export const MetaData: Metadata = {
 	metadataBase: new URL(url),
 	title: `${siteName}`,
 	description,

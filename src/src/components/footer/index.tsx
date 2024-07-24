@@ -28,14 +28,14 @@ export function Footer() {
 
 	return (
 		<>
-			<footer className="border-t border-white/[0.2] w-screen min-h-[100px] mt-10 flex flex-col justify-center items-center">
+			<footer className="border-t border-white/[0.2] w-screen min-h-[100px] mt-10 py-2 flex flex-col justify-center items-center">
 				<div className="text-sm inline-flex items-center font-semibold gap-x-2">
 					Made with{" "}
 					<HeartIcon
 						onClick={firework}
 						width={32}
 						height={32}
-						className={isFireworking ? "" : "animate-pulse"}
+						className={isFireworking ? "" : "animate-pulse cursor-pointer"}
 					/>{" "}
 					by <a href="https://github.com/EdamAme-x">ame_x</a>
 				</div>
