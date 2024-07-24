@@ -48,7 +48,7 @@ export function Footer() {
 				</div>
 				{!fireworksInstance && (
 					<div className="text-sm flex flex-col items-center font-semibold gap-y-1 mt-2">
-						<ArrowUp />
+						<ArrowUp width={16} height={16} />
 						<span>Click</span>
 					</div>
 				)}
