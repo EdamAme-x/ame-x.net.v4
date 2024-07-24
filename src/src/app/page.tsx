@@ -1,4 +1,4 @@
-import { BlogListView } from "@/components/blog";
+import { BlogPostList } from "@/components/blog";
 import { CrossLink } from "@/components/crosslink";
 import { Gallery } from "@/components/gallery";
 import { Hero } from "@/components/hero";
@@ -10,7 +10,7 @@ export default function Home() {
 		<Layout>
 			<Hero />
 			<Works />
-			<BlogListView />
+			<BlogPostList />
 			<Gallery />
 			<CrossLink />
 		</Layout>

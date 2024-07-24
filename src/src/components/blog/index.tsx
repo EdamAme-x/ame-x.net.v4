@@ -8,12 +8,10 @@ import { cache } from "@/lib/cache";
 import type { Post } from "@/backend/types";
 import { Badge } from "../ui/badge";
 
-export function BlogListView() {
+export function BlogPostList() {
 	return (
-		<div
-			id="blog"
-			className="w-full flex flex-col justify-center items-center mt-10">
-			<h2 className="text-3xl font-bold text-gradient inline-flex gap-x-1 items-center">
+		<div className="flex flex-col items-center mt-10">
+			<h2 className="text-3xl font-bold text-gradient flex items-center gap-x-1">
 				<RssIcon width={24} height={24} />
 				Blog
 			</h2>

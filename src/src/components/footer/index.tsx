@@ -4,26 +4,29 @@ import { useState } from "react";
 import { ArrowUp, HeartIcon } from "lucide-react";
 
 interface FireWorksMockClass {
-    start: () => void;
-    stop: () => void;
+	start: () => void;
+	stop: () => void;
 }
 
 export function Footer() {
-	const [isFireworking, setIsFireworking] = useState<null | FireWorksMockClass>(null);
+	const [fireworksInstance, setFireworksInstance] =
+		useState<null | FireWorksMockClass>(null);
 
-	const firework = async () => {
-		if (isFireworking) {
-			isFireworking.stop();
+	const toggleFireworks = async () => {
+		if (fireworksInstance) {
+			fireworksInstance.stop();
 			document
 				.getElementById("fireworks-overlay")
 				?.childNodes[0].remove();
-			setIsFireworking(null);
+			setFireworksInstance(null);
 			return;
 		}
 
-		const fw = new (await import("fireworks-js")).Fireworks(document.getElementById("fireworks-overlay")!);
-		fw.start();
-		setIsFireworking(fw);
+		const fireworks = new (await import("fireworks-js")).Fireworks(
+			document.getElementById("fireworks-overlay")!
+		);
+		fireworks.start();
+		setFireworksInstance(fireworks);
 	};
 
 	return (
@@ -32,14 +35,18 @@ export function Footer() {
 				<div className="text-sm inline-flex items-center font-semibold gap-x-2">
 					Made with{" "}
 					<HeartIcon
-						onClick={firework}
+						onClick={toggleFireworks}
 						width={32}
 						height={32}
-						className={isFireworking ? "" : "animate-pulse cursor-pointer"}
+						className={
+							fireworksInstance
+								? ""
+								: "animate-pulse cursor-pointer"
+						}
 					/>{" "}
 					by <a href="https://github.com/EdamAme-x">ame_x</a>
 				</div>
-				{!isFireworking && (
+				{!fireworksInstance && (
 					<div className="text-sm flex flex-col items-center font-semibold gap-y-1 mt-2">
 						<ArrowUp />
 						<span>Click</span>
