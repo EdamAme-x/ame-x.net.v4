@@ -1,13 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Fireworks } from "fireworks-js";
 import { ArrowUp, HeartIcon } from "lucide-react";
 
-export function Footer() {
-	const [isFireworking, setIsFireworking] = useState<null | Fireworks>(null);
+interface FireWorksMockClass {
+    start: () => void;
+    stop: () => void;
+}
 
-	const firework = () => {
+export function Footer() {
+	const [isFireworking, setIsFireworking] = useState<null | FireWorksMockClass>(null);
+
+	const firework = async () => {
 		if (isFireworking) {
 			isFireworking.stop();
 			document
@@ -17,7 +21,7 @@ export function Footer() {
 			return;
 		}
 
-		const fw = new Fireworks(document.getElementById("fireworks-overlay")!);
+		const fw = new (await import("fireworks-js")).Fireworks(document.getElementById("fireworks-overlay")!);
 		fw.start();
 		setIsFireworking(fw);
 	};
