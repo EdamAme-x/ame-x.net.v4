@@ -28,7 +28,7 @@ export function Header() {
 		<header
 			className={clsx(
 				"fixed top-0 z-[49]",
-				"w-full h-14",
+				"w-screen h-14",
 				"backdrop-blur-sm",
 				"border border-white/[0.2]",
 				"px-4",

@@ -10,8 +10,8 @@ export const CrossLinks = [
 		url: "https://akku1139.github.io"
 	},
 	{
-		name: "256 Server",
-		description: "Gateway of 256 Server",
-		url: "https://256server.net"
+		name: "ActiveTK",
+		description: "Useful tools of ActiveTK",
+		url: "https://www.activetk.jp"
 	}
 ];
