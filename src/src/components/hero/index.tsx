@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { BriefcaseBusiness } from "lucide-react";
 import BgImage from "@/assets/background.jpg";
 import CliffImage from "@/assets/cliff.png";
-import TreeImage from "@/assets/trees.webp";
+import TreeImage from "@/assets/trees.png";
 import { ElectricPulse } from "../section/electric-pulse";
 import { HoverBorderGradient } from "../ui/hover-gradient";
 import { Sparkles } from "../ui/sparkles";
